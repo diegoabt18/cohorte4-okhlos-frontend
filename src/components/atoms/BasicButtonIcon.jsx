@@ -1,10 +1,10 @@
 import React from 'react'
 import { Icon } from '@iconify/react'
 
-const BasicButtonIcon = () => {
+const BasicButtonIcon = ({icon, color, w, }) => {
     return (
         <button>
-            <Icon className='text-[2rem]' icon="ic:round-menu" style={{display:'inline'}} />
+            <Icon className='text-[2rem]' icon={icon}  style={{display:'inline', color:color, width:w }} />
         </button>
     )
 }

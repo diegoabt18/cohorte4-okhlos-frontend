@@ -5,7 +5,7 @@ import BasicButtonIcon from '../atoms/BasicButtonIcon'
 const NavbarDashboard = () => {
     return (
         <div className='flex justify-between shadow-xl px-3 '>
-            <BasicButtonIcon />
+            <BasicButtonIcon  icon={'ic:round-menu'} color={'Black'} />
             <ContenedorPerfil />
         </div>
     )
