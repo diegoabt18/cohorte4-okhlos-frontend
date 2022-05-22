@@ -1,17 +1,21 @@
 import React, { useState } from 'react'
 import { ButtonTable, ButtonLoadDataExcel } from '../atoms/'
+import {utils, writeFile} from "xlsx";
+
 
 const Table = ({ data }) => {
 
     console.log(data)
 
-    return (
-        <div className="overflow-x-auto font-GilroyLight h-[70vh] ">
+    
 
-            {data.file?
-                <table className="relative table table-zebra table-compact w-full ">
-                    <thead className='font-Roboto'>
-                        <tr className='w-full'>
+    return (
+        <div className="font-GilroyLight h-[60vh] ">
+
+            {data.file ?
+                <table className=" table table-zebra table-compact w-full ">
+                    <thead className=' font-Roboto'>
+                        <tr className=' w-full'>
                             {data.file ?
                                 data.columnas[0].map((c, index) => (
                                     <th className='bg-PrimarioColor2 text-black font-extrabold' key={index}>{c}</th>

@@ -1,10 +1,10 @@
 import Swal from 'sweetalert'
 
- const ModalAlert = function success(text) {
+ const ModalAlert = function success(title,text,icon) {
     Swal(
-        'Good job!',
-        'You clicked the button!',
-        text
+        title,
+        text,
+        icon
     )
 }
 
