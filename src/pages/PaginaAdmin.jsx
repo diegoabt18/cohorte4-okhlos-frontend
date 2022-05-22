@@ -1,36 +1,33 @@
-import React from "react";
-import {
-  NavbarDashboard,
-  SidebarDashboard,
-  Footer,
-} from "../components/templates";
-import { Routes, Route } from "react-router-dom";
-import Dashboard from "./Dashboard";
-import EstudentPageLoad from "./EstudentPageLoad";
-import ManageStudent from "./ManageStudent";
+import React from 'react'
+import { Footer, NavbarDashboard, SidebarDashboard } from '../components/templates'
+import { Routes, Route, NavLink } from "react-router-dom";
+import Dashboard from './Dashboard';
+import EstudentPageLoad from './EstudentPageLoad';
+import ManageStudent from './ManageStudent';
 
-const PaginaAdmin = () => {
-  return (
-    <div className="flex">
-      <div>
-        <SidebarDashboard />
-      </div>
-      <div className="w-full">
-        <NavbarDashboard />
-        <div id="Cuerpo" className="">
-          <Routes>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/Home" element={<Dashboard />} />
-            <Route path="/EstudentLoad" element={<EstudentPageLoad />} />
-            <Route path="/EstudentManage" element={<ManageStudent />} />
-          </Routes>
+const PaginaAdmin = ({ children }) => {
+    return (
+        <div className='flex'>
+            <div>
+                <SidebarDashboard />
+            </div>
+            <div className='w-full'>
+                <NavbarDashboard />
+                <div id='Cuerpo' className=''>
+
+                    {children}
+
+                </div>
+                <div>
+                    <Footer />
+                </div>
+
+            </div>
+
+
         </div>
-        <div>
-          <Footer />
-        </div>
-      </div>
-    </div>
-  );
+
+    );
 };
 
 export default PaginaAdmin;

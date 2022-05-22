@@ -1,9 +1,60 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 
-const Search = () => {
+const Search = ({ datos, setFilter }) => {
+
+  const payload = {
+    data: [],
+    columnas: datos.columnas,
+    codeColumnas: datos.codeColumnas,
+    name: datos.name,
+    file: true
+  }
+
+  console.log(datos.data)
+
+  const [searchInput, SetSearchInput] = useState({
+    search: '',
+  })
+
+  const handleInputChange = (event) => {
+    event.preventDefault()
+    SetSearchInput({
+      ...searchInput,
+      [event.target.name]: event.target.value.toUpperCase()
+    })
+  }
+
+  useEffect(() => {
+    if (datos.file) {
+
+      //item => array["1" "Alejandra Montañez Robayo", "alemonro27@gmail.com", 33, 1, 3135123438, "Mujer"]
+      if (searchInput == "") {
+        setFilter(data)
+
+      } else {
+        const filter = datos.data.filter(item => {
+          const nameMayus = item[1].toUpperCase()
+          if (nameMayus.includes(searchInput.search)) {
+            return true
+          }
+          else {
+            return false
+          }
+
+        })
+        console.log(filter)
+        payload.data = filter
+        setFilter(payload)
+      }
+    }
+
+  }, [searchInput])
+
+
+
   return (
-    <form >
+    <div >
       <label
         htmlFor="default-search"
         className="mb-2 text-sm font-medium text-transparent sr-only dark:text-gray-300"
@@ -12,13 +63,17 @@ const Search = () => {
       </label>
       <div className="relative  ">
         <input
+
           type="search"
           id="default-search"
+          name="search"
           className="block p-1 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-lg  font-GilroyLight border border-gray-300 focus:ring-transparent focus:border-transparent dark:bg-transparent dark:border-transparent dark:placeholder-transparent dark:text-white dark:focus:ring-transparent dark:focus:border-transparent"
           placeholder="Search"
+          onChange={handleInputChange}
           required
         />
-
+        {searchInput.search}
+        {/*
         <div className="absolute right-0 top-[50%] translate-y-[-50%]">
           <button
             type="submit"
@@ -26,9 +81,9 @@ const Search = () => {
           >
             <Icon icon="akar-icons:search" style={{ display: 'inline' }} />
           </button>
-        </div>
+        </div> */}
       </div>
-    </form>
+    </div>
   );
 };
 

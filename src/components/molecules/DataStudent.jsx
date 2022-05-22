@@ -1,12 +1,12 @@
 import React from 'react'
-import {InputNombre, InputDate, } from '../atoms'
+import { InputNombre, InputDate, } from '../atoms'
 
 const DataStudent = () => {
   return (
     <div>
-        <InputNombre/>
-        <InputDate/>
-        </div>
+      <InputNombre />
+      <InputDate />
+    </div>
   )
 }
 

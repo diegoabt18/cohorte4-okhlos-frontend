@@ -13,6 +13,7 @@ export {default as UserLogin} from './UserLogin';
 export {default as Perfil} from './Perfil';
 export {default as PageOptionsTitle} from './PageOptionsTitle';
 export {default as OptionTable} from './OptionTable';
+export {default as OptionTableAdmin} from './OptionTableAdmin';
 
 
 

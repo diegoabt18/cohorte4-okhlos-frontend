@@ -10,7 +10,7 @@ const MenuDesktop = () => {
                 Menu Principal
             </div>
             <div className='text-lg font-Roboto font-bold hover:bg-PrimarioColor2 py-2'>
-                <OnlyItemMenu icon={"ci:home-alt-outline"} text={"Inicio"} toLink={"/home"} />
+                <OnlyItemMenu icon={"ci:home-alt-outline"} text={"Inicio"} toLink={"/Dashboard"} />
 
             </div>
             <ItemMenu icon={"ph:student-fill"} text={"Estudiantes"}  >
