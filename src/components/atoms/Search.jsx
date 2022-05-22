@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
-import { setData } from "../../redux/slices/loadDataSlice";
-import { useDispatch } from "react-redux";
 
 const Search = ({ datos, setFilter }) => {
-  const dispatch = useDispatch()
 
   const payload = {
     data: [],
@@ -50,7 +47,6 @@ const Search = ({ datos, setFilter }) => {
         payload.data = filter
         setFilter(payload)
       }
-      //dispatch(setData(payload))
     }
 
   }, [searchInput])

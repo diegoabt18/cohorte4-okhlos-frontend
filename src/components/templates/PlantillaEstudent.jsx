@@ -3,19 +3,20 @@ import { Table } from '../organisms/Index'
 import { PageOptionsTitle, OptionTable } from '../molecules'
 import { TitlePage } from '../atoms'
 import { useSelector } from 'react-redux'
-import { selectDataExcel } from '../../redux/slices/loadDataSlice'
+import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice'
 
 
 const PlantillaEstudent = () => {
 
-  const data = useSelector(selectDataExcel);
+  const data = useSelector(selectDataEstudentExcel);
+ console.log(data)
 
   const [filter, setFilter]=useState(data);
 
   return (
     <div className='grid'>
       <div className='pt-6 pb-4'>
-        <TitlePage text={"Administrar Estudiantes"} />
+        <TitlePage text={"Cargar Datos Estudiantes"} />
       </div>
       <OptionTable filter={filter.data.length? filter:data} setFilter={setFilter}  />
       <br />

@@ -9,7 +9,7 @@ const BasicComboBox = () => {
     ]
     
     return (
-        <Select options={options} />
+        <Select className='w-[200px]' options={options} />
     )
 }
 

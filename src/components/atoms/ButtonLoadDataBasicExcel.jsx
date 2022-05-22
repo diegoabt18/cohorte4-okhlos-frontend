@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { utils, read, writeFile } from "xlsx";
 import { useDispatch } from 'react-redux';
-import { setData } from '../../redux/slices/loadDataSlice'
+import { setDataEstudent } from '../../redux/slices/loadDataEstudentSlice'
 import { Icon } from '@iconify/react';
 
 const ButtonLoadDataExcel = () => {
@@ -43,7 +43,7 @@ const ButtonLoadDataExcel = () => {
                 payload.columnas = columnas;
                 payload.file = true;
                 payload.name = name
-                dispatch(setData(payload))
+                dispatch(setDataEstudent(payload))
             }
         }
     }

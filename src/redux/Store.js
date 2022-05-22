@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
 import authSlice from './slices/authSlice'
-import loadDataSlice from './slices/loadDataSlice'
+import loadDataEstudentSlice from './slices/loadDataEstudentSlice'
 
 export const store = configureStore({
   reducer: {
       counter:authSlice,
-      dataExcel:loadDataSlice
+      dataEstudnetExcel:loadDataEstudentSlice
   },
 })
