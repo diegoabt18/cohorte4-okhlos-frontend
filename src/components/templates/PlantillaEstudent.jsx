@@ -8,23 +8,23 @@ import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlic
 
 const PlantillaEstudent = () => {
 
-  const data = useSelector(selectDataEstudentExcel);
- console.log(data)
+    const data = useSelector(selectDataEstudentExcel);
+    console.log(data)
 
-  const [filter, setFilter]=useState(data);
+    const [filter, setFilter]=useState(data);
 
-  return (
-    <div className='grid'>
-      <div className='pt-6 pb-4'>
-        <TitlePage text={"Cargar Datos Estudiantes"} />
-      </div>
-      <OptionTable filter={filter.data.length? filter:data} setFilter={setFilter}  />
-      <br />
-      <div className='overflow-scroll'>
-        <Table data={filter.data.length? filter:data} />
-      </div>
-    </div>
-  )
+    return (
+        <div className='grid'>
+            <div className='pt-6 pb-4'>
+                <TitlePage text={"Cargar Datos Estudiantes"} />
+            </div>
+            <OptionTable filter={filter.data.length? filter:data} setFilter={setFilter}  />
+            <br />
+            <div className='overflow-scroll'>
+                <Table data={filter.data.length? filter:data} />
+            </div>
+        </div>
+    )
 }
 
 export default PlantillaEstudent
