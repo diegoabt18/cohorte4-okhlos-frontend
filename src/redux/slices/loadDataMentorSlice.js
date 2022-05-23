@@ -8,12 +8,12 @@ const initialState = {
     file: false
 }
 
-export const loadDataEstudentSlice = createSlice({
-    name: 'dataEstudentExcel',
+export const loadDataMentorSlice = createSlice({
+    name: 'dataMentorExcel',
     initialState,
     reducers: {
        
-        setDataEstudent: (state, action) => {
+        setDataMentor: (state, action) => {
            return{
                 ...state,
                 data: action.payload.data,
@@ -23,7 +23,7 @@ export const loadDataEstudentSlice = createSlice({
                 file: action.payload.file
            }
         },
-        resetDataEstudent: () => {
+        resetDataMentor: () => {
             return {
                 initialState
             }
@@ -34,8 +34,8 @@ export const loadDataEstudentSlice = createSlice({
 })
 
 // Action creators are generated for each case reducer function
-export const { setDataEstudent, resetDataEstudent  } = loadDataEstudentSlice.actions
+export const { setDataMentor, resetDataMentor  } = loadDataMentorSlice.actions
 
-export const selectDataEstudentExcel = (state) => state.dataEstudentExcel;
+export const selectDataMentorExcel = (state) => state.dataMentorExcel;
 
-export default loadDataEstudentSlice.reducer
+export default loadDataMentorSlice.reducer
