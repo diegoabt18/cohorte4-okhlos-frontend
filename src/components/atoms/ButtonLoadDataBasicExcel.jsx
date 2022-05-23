@@ -64,7 +64,7 @@ const ButtonLoadDataExcel = ( {load} ) => {
 
     return (
 
-            <label htmlFor="dropzone-file" className="text-black font-Roboto bg-PrimarioColor2 hover:bg-yellow-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 gap-2  ">
+            <label htmlFor="dropzone-file" className="text-black font-Roboto bg-PrimarioColor2 hover:bg-PrimarioColor1 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 gap-2  ">
                 <Icon className='text-[1.2rem]' icon="akar-icons:cloud-upload" style={{ display: 'inline' }} />
                 <p className='text-[1.1rem]'>Cargar Datos</p>
                 <input id="dropzone-file" className="hidden"
