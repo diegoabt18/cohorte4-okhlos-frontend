@@ -8,7 +8,7 @@ import MentorPageLoad from './pages/MentorPageLoad'
 import ManageStudent from './pages/ManageStudent'
 import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
-
+import { PlantillaMatch } from './components/templates'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -30,6 +30,9 @@ function App() {
         </PaginaAdmin>} />
         <Route path={"/MentorManage"} element={<PaginaAdmin >
           <ManageMentor />
+        </PaginaAdmin>} />
+        <Route path={"/PlantillaMatch"} element={<PaginaAdmin >
+          <PlantillaMatch />
         </PaginaAdmin>} />
       </Routes>
     </div>

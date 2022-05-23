@@ -34,7 +34,7 @@ const OptionTable = ({ filter, setFilter }) => {
             <div className='flex gap-2'>
                 <BasicComboBox />
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
-                <ButtonIconText text={"Agregar Estudiante"} icon={"bi:person-plus"} func={exportFile} />
+                <ButtonIconText text={"Agregar Integrante"} icon={"bi:person-plus"} func={exportFile} />
 
             </div>
 
