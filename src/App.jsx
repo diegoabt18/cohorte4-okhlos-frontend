@@ -4,8 +4,10 @@ import './App.css'
 import { ContainerLogin } from './components/organisms'
 import PaginaAdmin from './pages/PaginaAdmin'
 import EstudentPageLoad from './pages/EstudentPageLoad'
+import MentorPageLoad from './pages/MentorPageLoad'
 import ManageStudent from './pages/ManageStudent'
 import Dashboard from './pages/Dashboard'
+
 
 function App() {
   const [count, setCount] = useState(0)
@@ -21,6 +23,9 @@ function App() {
         </PaginaAdmin>} />
         <Route path={"/EstudentManage"} element={<PaginaAdmin >
           <ManageStudent />
+        </PaginaAdmin>} />
+        <Route path={"/MentorLoad"} element={<PaginaAdmin >
+          <MentorPageLoad />
         </PaginaAdmin>} />
        
       </Routes>

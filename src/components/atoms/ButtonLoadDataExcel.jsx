@@ -2,8 +2,9 @@ import React, { useState } from 'react'
 import { utils, read, writeFile } from "xlsx";
 import { useDispatch } from 'react-redux';
 import { setDataEstudent } from '../../redux/slices/loadDataEstudentSlice'
+import { setDataMentor } from '../../redux/slices/loadDataMentorSlice'
 
-const ButtonLoadDataExcel = () => {
+const ButtonLoadDataExcel = ({load} ) => {
 
     const dispatch = useDispatch();
     const payload = {
@@ -42,7 +43,12 @@ const ButtonLoadDataExcel = () => {
                 payload.columnas = columnas;
                 payload.file = true;
                 payload.name=name
-                dispatch(setDataEstudent(payload))
+                if (load == "student"){
+                    dispatch(setDataEstudent(payload))
+                } 
+                else(
+                    dispatch(setDataMentor(payload))
+                )
             }
         }
     }

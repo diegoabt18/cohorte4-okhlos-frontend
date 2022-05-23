@@ -19,16 +19,26 @@ const MenuDesktop = () => {
                         <IconMenu icon={"akar-icons:circle"} text={"Cargar Datos"} />
                     </div>
                 </NavLink>
+                
                 <NavLink to={"/EstudentManage"}>
                     <div className="hover:text-PrimarioColor1">
                         <IconMenu icon={"akar-icons:circle"} text={"Administrar Estudiantes"} />
                     </div>
                 </NavLink>
             </ItemMenu>
+           
             <ItemMenu icon={"carbon:user-profile"} text={"Mentores"}  >
-                <IconMenu icon={"akar-icons:circle"} text={"Cargar Datos"} />
+                <NavLink to={"/MentorLoad"} >
+                    <div className="hover:text-PrimarioColor1">
+                        <IconMenu icon={"akar-icons:circle"} text={"Cargar Datos"} />
+                    </div>
+                </NavLink>
+           
+           
+           
                 <IconMenu icon={"akar-icons:circle"} text={"Informe Mentores"} />
             </ItemMenu>
+           
             <ItemMenu icon={"fontisto:equalizer"} text={"Match"}  >
                 <IconMenu icon={"akar-icons:circle"} text={"Realizar Match"} />
             </ItemMenu>

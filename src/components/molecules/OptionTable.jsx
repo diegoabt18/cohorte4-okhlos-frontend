@@ -5,7 +5,7 @@ import { Search, ButtonIconText, ButtonLoadDataBasicExcel } from '../atoms'
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
 
-const OptionTable = ({filter, setFilter}) => {
+const OptionTable = ({filter, setFilter, load}) => {
     const data = useSelector(selectDataEstudentExcel);
    
 
@@ -33,7 +33,7 @@ const OptionTable = ({filter, setFilter}) => {
             </div>
             <div className='flex'>
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile}/>
-                <ButtonLoadDataBasicExcel />
+                <ButtonLoadDataBasicExcel load={load} />
                 <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} />
             </div>
 
