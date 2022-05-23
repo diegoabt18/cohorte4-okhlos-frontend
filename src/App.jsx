@@ -6,6 +6,7 @@ import PaginaAdmin from './pages/PaginaAdmin'
 import EstudentPageLoad from './pages/EstudentPageLoad'
 import MentorPageLoad from './pages/MentorPageLoad'
 import ManageStudent from './pages/ManageStudent'
+import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
 
 
@@ -27,7 +28,9 @@ function App() {
         <Route path={"/MentorLoad"} element={<PaginaAdmin >
           <MentorPageLoad />
         </PaginaAdmin>} />
-       
+        <Route path={"/MentorManage"} element={<PaginaAdmin >
+          <ManageMentor />
+        </PaginaAdmin>} />
       </Routes>
     </div>
   )

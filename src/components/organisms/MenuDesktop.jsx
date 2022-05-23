@@ -33,10 +33,13 @@ const MenuDesktop = () => {
                         <IconMenu icon={"akar-icons:circle"} text={"Cargar Datos"} />
                     </div>
                 </NavLink>
-           
-           
-           
-                <IconMenu icon={"akar-icons:circle"} text={"Informe Mentores"} />
+
+                <NavLink to={"/MentorManage"}>
+                    <div className="hover:text-PrimarioColor1">
+                        <IconMenu icon={"akar-icons:circle"} text={"Administrar Mentores"} />
+                    </div>
+                </NavLink>
+          
             </ItemMenu>
            
             <ItemMenu icon={"fontisto:equalizer"} text={"Match"}  >
