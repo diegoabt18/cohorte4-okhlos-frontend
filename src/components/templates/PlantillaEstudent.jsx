@@ -18,7 +18,7 @@ const PlantillaEstudent = () => {
       <div className='pt-6 pb-4'>
         <TitlePage text={"Cargar Datos Estudiantes"} />
       </div>
-      <OptionTable filter={filter.data.length? filter:data} setFilter={setFilter}  />
+      <OptionTable filter={filter.data.length? filter:data} setFilter={setFilter} load={"student"} />
       <br />
       <div className='overflow-scroll'>
         <Table data={filter.data.length? filter:data} />

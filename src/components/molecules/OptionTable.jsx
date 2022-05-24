@@ -1,13 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
+import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
 import { Search, ButtonIconText, ButtonLoadDataBasicExcel } from '../atoms'
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
 
-const OptionTable = ({filter, setFilter}) => {
-    const data = useSelector(selectDataEstudentExcel);
-   
+const OptionTable = ({filter, setFilter, load}) => {
+    var data = "";
+    
+   if (load=="student"){
+       data=useSelector(selectDataEstudentExcel);
+   }else {
+    data=useSelector(selectDataMentorExcel);
+   }
+
 
     function exportFile() {
         if (filter.file) {
@@ -33,7 +40,7 @@ const OptionTable = ({filter, setFilter}) => {
             </div>
             <div className='flex'>
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile}/>
-                <ButtonLoadDataBasicExcel />
+                <ButtonLoadDataBasicExcel load={load} />
                 <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} />
             </div>
 
