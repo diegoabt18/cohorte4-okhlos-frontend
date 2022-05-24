@@ -1,13 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
+import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
 import { Search, ButtonIconText, ButtonLoadDataBasicExcel } from '../atoms'
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
 
 const OptionTable = ({filter, setFilter, load}) => {
-    const data = useSelector(selectDataEstudentExcel);
-   
+    var data = "";
+    
+   if (load=="student"){
+       data=useSelector(selectDataEstudentExcel);
+   }else {
+    data=useSelector(selectDataMentorExcel);
+   }
+
 
     function exportFile() {
         if (filter.file) {
