@@ -4,6 +4,7 @@ import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlic
 import { Search, ButtonIconText, ButtonLoadDataBasicExcel, BasicComboBox } from '../atoms'
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
+import { Icon } from '@iconify/react';
 
 const OptionTable = ({ filter, setFilter }) => {
     const data = useSelector(selectDataEstudentExcel);
@@ -34,7 +35,12 @@ const OptionTable = ({ filter, setFilter }) => {
             <div className='flex gap-2'>
                 <BasicComboBox />
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
-                <ButtonIconText text={"Agregar Estudiante"} icon={"bi:person-plus"} func={exportFile} />
+                <label for="my-modal-3" class="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor3 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
+                    <p className='flex gap-2 items-center' func={exportFile}>
+                        <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold '/> Agregar Estudiante 
+                    </p>
+                </label>
+
 
             </div>
 

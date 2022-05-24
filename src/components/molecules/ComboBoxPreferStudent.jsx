@@ -1,10 +1,10 @@
 import React from 'react'
 import {MultiComboBox,} from '../atoms'
 
-const ComboBoxPreferStudent = () => {
+const ComboBoxPreferStudent = ({text}) => {
     return (
-        <div>
-            <MultiComboBox/>    
+        <div >
+            <MultiComboBox text={'Intereses'}/>    
         </div>
     )
 }

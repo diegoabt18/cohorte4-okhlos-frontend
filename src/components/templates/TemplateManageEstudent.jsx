@@ -1,6 +1,6 @@
 import React from 'react'
 import { OptionTableAdmin, PageOptionsTitle } from '../molecules'
-import { Table } from '../organisms'
+import { NewStudent, Table } from '../organisms'
 
 const templateManageEstudent = () => {
     //Llenar tabla con datos de la bases de datos
@@ -39,12 +39,11 @@ const templateManageEstudent = () => {
         file: true
     }
 
-
-
     return (
         <div className='grid'>
             <div className='pt-6 pb-4 px-4'>
                 <PageOptionsTitle text={"Administrar Estudiantes"} />
+                <NewStudent />
             </div>
             <div className='px-2'>
                 <OptionTableAdmin />
@@ -53,6 +52,7 @@ const templateManageEstudent = () => {
             <div className='overflow-scroll'>
                 <Table data={data} />
             </div>
+
         </div>
     )
 }

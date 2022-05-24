@@ -3,7 +3,7 @@ import BasicButton from '../atoms/BasicButton'
 
 const FooterModal = () => {
     return (
-        <div>
+        <div className=''>
             <BasicButton />
         </div>
     )
