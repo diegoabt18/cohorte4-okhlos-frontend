@@ -33,4 +33,5 @@ export {default as ModalAlert} from "./ModalAlert";
 export {default as ButtonLoadDataExcel} from "./ButtonLoadDataExcel";
 export {default as BtnInfo} from "./BtnInfo";
 export {default as ButtonLoadDataBasicExcel} from "./ButtonLoadDataBasicExcel";
+export {default as LogoColorLapiz} from "./LogoColorLapiz";
 

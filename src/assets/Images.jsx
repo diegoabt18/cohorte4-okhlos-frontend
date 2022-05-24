@@ -19,5 +19,5 @@ export default {
     ImgBienAdmin,
     imgform,
     imginf,
-    LogoColorLapiz
+    LogoColorLapiz,
 }
