@@ -35,5 +35,8 @@ export {default as BtnInfo} from "./BtnInfo";
 export {default as ButtonLoadDataBasicExcel} from "./ButtonLoadDataBasicExcel";
 export {default as LogoColorLapiz} from "./LogoColorLapiz";
 export {default as ImgConstruccion} from "./ImgConstruccion";
+export {default as Layout} from "./Layout";
+export {default as RequireAuth} from "./RequireAuth";
+export {default as Unauthorized} from "./Unauthorized";
 
 

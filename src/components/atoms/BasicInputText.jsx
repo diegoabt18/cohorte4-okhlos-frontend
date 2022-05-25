@@ -1,12 +1,14 @@
 import React from 'react'
 
-const BasicInputText = () => {
+const BasicInputText = ({ placeholder, name, func, type }) => {
     return (
         <div className="mb-6 " >
-            <input 
-                type="email" 
-                id="email" 
-                placeholder="CAMBIAR ESTE TEXTO MAIL" 
+            <input
+                type={type}
+                id={name}
+                name={name}
+                placeholder={placeholder}
+                onChange={func}
                 required
                 className="
                     border-b-2
@@ -18,7 +20,7 @@ const BasicInputText = () => {
                     border-y-black
                     dark:text-black
                     outline-none
-                " 
+                "
             />
         </div>
     )

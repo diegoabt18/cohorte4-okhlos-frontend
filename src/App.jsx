@@ -10,70 +10,37 @@ import ManageStudent from './pages/ManageStudent'
 import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
 import Sesiones from './pages/Sesiones'
-
+import {  RequireAuth, Layout } from './components/atoms'
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <div className="App">
-      <Routes>
+      <Routes path={"/"} element={<Layout />} >
         <Route path={"/"} element={<ContainerLogin />} />
-        <Route
-          path={"/Dashboard"}
-          element={
-            <PaginaAdmin>
-              <Dashboard />
-            </PaginaAdmin>
-          }
-        />
-        <Route
-          path={"/EstudentLoad"}
-          element={
-            <PaginaAdmin>
-              <EstudentPageLoad />
-            </PaginaAdmin>
-          }
-        />
-        <Route
-          path={"/EstudentManage"}
-          element={
-            <PaginaAdmin>
-              <ManageStudent />
-            </PaginaAdmin>
-          }
-        />
-        <Route
-          path={"/MentorLoad"}
-          element={
-            <PaginaAdmin>
-              <MentorPageLoad />
-            </PaginaAdmin>
-          }
-        />
-        <Route
-          path={"/MentorManage"}
-          element={
-            <PaginaAdmin>
-              <ManageMentor />
-            </PaginaAdmin>
-          }
-        />
-        <Route
-          path={"/PlantillaMatch"}
-          element={
-            <PaginaAdmin>
-              <PlantillaMatch />
-            </PaginaAdmin>
-          }
-        />
-        <Route
-          path={"/Sesiones"}
-          element={
-            <PaginaAdmin>
-              <Sesiones />
-            </PaginaAdmin>
-          }
-        />
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/Dashboard"} element={<PaginaAdmin >
+            <Dashboard />
+          </PaginaAdmin>} />
+        </Route>
+        <Route path={"/EstudentLoad"} element={<PaginaAdmin >
+          <EstudentPageLoad />
+        </PaginaAdmin>} />
+        <Route path={"/EstudentManage"} element={<PaginaAdmin >
+          <ManageStudent />
+        </PaginaAdmin>} />
+        <Route path={"/MentorLoad"} element={<PaginaAdmin >
+          <MentorPageLoad />
+        </PaginaAdmin>} />
+        <Route path={"/MentorManage"} element={<PaginaAdmin >
+          <ManageMentor />
+        </PaginaAdmin>} />
+        <Route path={"/PlantillaMatch"} element={<PaginaAdmin >
+          <PlantillaMatch />
+        </PaginaAdmin>} />
+        <Route path={"/Sesiones"} element={<PaginaAdmin>
+          <Sesiones />
+        </PaginaAdmin>} />
       </Routes>
     </div>
   );

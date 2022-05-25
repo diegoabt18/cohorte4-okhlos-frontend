@@ -1,19 +1,20 @@
 import React from 'react'
 import axios from '../axios.js'
+import jwtDecode from 'jwt-decode'
 
 const login = async (username, password) => {
     console.log(username, password)
     const data = {
-        username: username,
+        email: username,
         password: password
     }
     return await axios
-        .post("login/", data)
+        .post("login2/", data)
         .then((response) => {
 
-            console.log(response.data)
-            if (response.data.access) {
-                localStorage.setItem("user", JSON.stringify(response.data));
+            console.log(response.data.accesToken)
+            if (response.data.accesToken) {
+                localStorage.setItem("user", JSON.stringify(response.data.accesToken));
             }
 
             return response.data;
@@ -22,6 +23,17 @@ const login = async (username, password) => {
 
 const logout = () => {
     localStorage.removeItem("user");
+}
+
+const isLogin = () => {
+    if(JSON.parse( localStorage.getItem("user"))){
+        const token = localStorage.getItem("user")
+        const decode = jwtDecode(token)
+        console.log(decode)
+        return decode
+    }else{
+        return 0
+    }
 }
 
 
@@ -39,4 +51,4 @@ const register = (username, password, name, role, last_name, email, address, cel
 }
 
 
-export default { login, logout, register }
+export default { login, logout, register, isLogin }
