@@ -35,7 +35,6 @@ const OptionTable = ({ filter, setFilter }) => {
                 <BasicComboBox />
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
                 <ButtonIconText text={"Agregar Estudiante"} icon={"bi:person-plus"} func={exportFile} />
-
             </div>
 
         </div>
