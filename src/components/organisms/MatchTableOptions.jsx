@@ -7,9 +7,9 @@ const MatchTableOptions = () => {
       <div className="w-full">
         <BasicComboBox />
       </div>
-      <div className="flex justify-between">
-        <ButtonIconText />
-        <ButtonIconText />
+      <div className="flex justify-around">
+        <ButtonIconText text={"Cargar Datos"} icon={"akar-icons:cloud-upload"} />
+        <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} />
       </div>
     </div>
   );

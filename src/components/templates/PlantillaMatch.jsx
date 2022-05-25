@@ -5,7 +5,7 @@ import MatchTableOptions from "../organisms/MatchTableOptions";
 const PlantillaMatch = () => {
   return (
     <div className='grid' >
-      <div className='pt-6 pb-4 px-4 font-Roboto'>
+      <div className='pt-6 pb-4 px-4 font-Roboto font-bold'>
             <PageOptionsTitle text={"Realizar Match"} />
             <MatchTableOptions />
       </div>

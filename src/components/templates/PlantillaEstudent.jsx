@@ -15,7 +15,7 @@ const PlantillaEstudent = () => {
 
   return (
     <div className='grid'>
-      <div className='pt-6 pb-4'>
+      <div className='pt-6 pb-4 font-Roboto font-bold'>
         <TitlePage text={"Cargar Datos Estudiantes"} />
       </div>
       <OptionTable filter={filter.data.length? filter:data} setFilter={setFilter} load={"student"} />

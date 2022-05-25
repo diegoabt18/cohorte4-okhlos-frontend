@@ -15,6 +15,7 @@ const MenuDesktop = () => {
           text={"Inicio"}
           toLink={"/Dashboard"}
         />
+      
       </div>
       <ItemMenu icon={"ph:student-fill"} text={"Estudiantes"}>
         <NavLink to={"/EstudentLoad"}>
@@ -57,7 +58,11 @@ const MenuDesktop = () => {
       </ItemMenu>
 
       <ItemMenu icon={"carbon:group-presentation"} text={"Sesiones"}>
-        <IconMenu icon={"akar-icons:circle"} text={"Informe Sesiones"} />
+        <NavLink to={"/Sesiones"}>
+          <div className="hover:text-PrimarioColor1">
+            <IconMenu icon={"akar-icons:circle"} text={"Informe Sesiones"} />
+          </div>
+        </NavLink>
       </ItemMenu>
     </div>
   );

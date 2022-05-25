@@ -22,7 +22,7 @@ const templateManageEstudent = () => {
 
     return (
         <div className='grid'>
-            <div className='pt-6 pb-4 px-4 font-Roboto'>
+            <div className='pt-6 pb-4 px-4 font-Roboto font-bold'>
                 <PageOptionsTitle text={"Administrar Estudiantes"} />
                 <NewStudent />
             </div>
