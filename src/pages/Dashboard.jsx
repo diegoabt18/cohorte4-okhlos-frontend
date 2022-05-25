@@ -7,7 +7,7 @@ const Dashboard = () => {
         <div>
             <div className='flex'>
             <Icon className=' text-[4rem]' icon={"eos-icons:bubble-loading"}/> 
-            Loading
+            Loading Data
             </div>    
             <Welcome />
             <CardsInfoGeneral />
