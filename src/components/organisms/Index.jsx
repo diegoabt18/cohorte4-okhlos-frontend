@@ -9,3 +9,4 @@ export {default as Table} from "./Table";
 export {default as BasicTable} from "./BasicTable";
 export {default as MatchTableOptions} from "./MatchTableOptions";
 export {default as NewStudent} from './NewStudent';
+export {default as NewMentor} from './NewMentor'
