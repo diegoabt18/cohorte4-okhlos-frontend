@@ -6,7 +6,7 @@ const Dashboard = () => {
         <div>
             <Welcome />
             <CardsInfoGeneral />
-            <div className='px-4'>
+            <div className=' '>
                 <ImgFase2 />
             </div>
         </div>

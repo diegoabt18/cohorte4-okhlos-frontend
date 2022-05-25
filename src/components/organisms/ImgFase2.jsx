@@ -4,7 +4,7 @@ import Images from "../../assets/Images";
 
 const ImgFase2 = () => {
   return (
-    <div className='flex justify-between'>
+    <div className='flex justify-between px-4'>
     <img src={Images.imgform}  alt="FomulariosDiligenciados"/>
     <img src={Images.imginf}  alt="InformesDiligenciados"/>        
     </div>  
