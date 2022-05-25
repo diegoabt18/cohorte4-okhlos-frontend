@@ -11,12 +11,11 @@ const PaginaAdmin = ({ children }) => {
     <div className="flex">
       <div>
         <div className="hidden lg:block">
-        <SidebarDashboard />
+          <SidebarDashboard />
         </div>
         <div className="lg:hidden w-min">
-        <NavbarResponsive/>
+          <NavbarResponsive />
         </div>
-
       </div>
       <div className="w-full">
         <NavbarDashboard />
