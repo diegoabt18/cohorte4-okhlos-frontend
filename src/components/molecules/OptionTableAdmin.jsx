@@ -5,14 +5,15 @@ import { Search, ButtonIconText, ButtonLoadDataBasicExcel, BasicComboBox } from 
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
 import { selectDataMentorApi } from '../../redux/slices/dataApiMentorSlice';
+import { Icon } from '@iconify/react';
 
-const OptionTableAdmin = ({filter, setFilter, load}) => {
+const OptionTableAdmin = ({ filter, setFilter, load }) => {
     var data = "";
 
-    if (load=="student"){
-        data=useSelector(selectDataEstudentApi);
-    }else {
-     data=useSelector(selectDataMentorApi);
+    if (load == "student") {
+        data = useSelector(selectDataEstudentApi);
+    } else {
+        data = useSelector(selectDataMentorApi);
     }
 
 
@@ -21,8 +22,8 @@ const OptionTableAdmin = ({filter, setFilter, load}) => {
         console.log("Si entre pues")
         if (filter.file) {
             /* convert state to workbook */
-            
-            const file = data.columnas.concat(Object.values( filter.data))
+
+            const file = data.columnas.concat(Object.values(filter.data))
             console.log(file)
             const ws = utils.aoa_to_sheet(file);
             const wb = utils.book_new();
@@ -44,7 +45,12 @@ const OptionTableAdmin = ({filter, setFilter, load}) => {
             <div className='flex gap-2'>
                 <BasicComboBox />
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
-                <ButtonIconText text={"Agregar Integrante"} icon={"bi:person-plus"} func={exportFile} />
+                <label for="my-modal-3" class="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor3 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
+                    <p className='flex gap-2 items-center' func={exportFile}>
+                        <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> Agregar Estudiante
+                    </p>
+                </label>
+
 
             </div>
 

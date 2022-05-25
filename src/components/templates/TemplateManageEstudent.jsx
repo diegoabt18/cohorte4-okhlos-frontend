@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { OptionTableAdmin, PageOptionsTitle } from '../molecules';
-import { BasicTable } from '../organisms';
+import { BasicTable, NewStudent } from '../organisms';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllStudent, selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
 
@@ -24,6 +24,7 @@ const templateManageEstudent = () => {
         <div className='grid'>
             <div className='pt-6 pb-4 px-4 font-Roboto'>
                 <PageOptionsTitle text={"Administrar Estudiantes"} />
+                <NewStudent />
             </div>
             <div className='px-2'>
                 <OptionTableAdmin filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"student"} />
@@ -32,6 +33,7 @@ const templateManageEstudent = () => {
             <div className='overflow-scroll'>
                 { <BasicTable datos={filter.data.length? filter:dataApi}  /> }
             </div>
+
         </div>
     )
 }

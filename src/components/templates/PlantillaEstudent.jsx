@@ -8,10 +8,10 @@ import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlic
 
 const PlantillaEstudent = () => {
 
-  const data = useSelector(selectDataEstudentExcel);
- console.log(data)
+    const data = useSelector(selectDataEstudentExcel);
+    console.log(data)
 
-  const [filter, setFilter]=useState(data);
+    const [filter, setFilter]=useState(data);
 
   return (
     <div className='grid'>
