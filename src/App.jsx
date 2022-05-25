@@ -9,6 +9,7 @@ import ManageStudent from './pages/ManageStudent'
 import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
 import { PlantillaMatch } from './components/templates'
+import { Icon } from '@iconify/react'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -35,6 +36,7 @@ function App() {
           <PlantillaMatch />
         </PaginaAdmin>} />
       </Routes>
+      
     </div>
   )
 }
