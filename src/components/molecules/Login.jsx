@@ -1,8 +1,31 @@
-import React from 'react'
-import { NavLink } from 'react-router-dom'
+import React, {useState} from 'react'
+import { Navigate, NavLink } from 'react-router-dom'
 import { BasicButton, BasicInputText, LinkForgetPassword, LogoColorLapiz, } from '../atoms'
+import {login} from "../../redux/slices/authSlice"
+import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+    const navigate=useNavigate()
+    const dispatch =useDispatch()
+    const [data, setData] = useState({
+        username: '',
+        password: ''
+    })
+
+    const handleInputChange = (event) => {
+        setData({
+            ...data,
+            [event.target.name] : event.target.value
+        })
+    }
+    
+    function click() {
+        console.log(data)
+        dispatch(login(data))
+        navigate("/Dashboard")
+    }
+
     return (
         <div className='flex gap-y-7 items-center justify-center flex-col w-full '>
             <LogoColorLapiz/>
@@ -10,12 +33,17 @@ const Login = () => {
                 Bienvenido a OKHLOS
             </h2>
             <div className='flex flex-col gap-y-1 '>
-                <BasicInputText />
-                <BasicInputText />
+                <BasicInputText placeholder={"Ingrese el email"} type={"email"} name={"username"} func={handleInputChange} />
+                <BasicInputText placeholder={"Ingrese la contraseña"} type={"password"} name={"password"} func={handleInputChange} />
             </div>
+            {/*
             <NavLink to={"/Dashboard"}>
-                <BasicButton text={"Ingresar"} />
+                <BasicButton text={"Ingresar"} func={click}/>
+
             </NavLink>
+             */}
+                <BasicButton text={"Ingresar"} func={click}/>
+
             <LinkForgetPassword />
         </div>
     )

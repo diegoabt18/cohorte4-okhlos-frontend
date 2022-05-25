@@ -1,6 +1,6 @@
 import React from 'react'
 
-const BasicButton = ({text}) => {
+const BasicButton = ({text, func}) => {
     return (
         <button className="
             bg-PrimarioColor2 
@@ -12,6 +12,8 @@ const BasicButton = ({text}) => {
             py-2 
             px-4 
             rounded"
+
+            onClick={func}
         >
             {text}
         </button>

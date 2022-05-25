@@ -9,16 +9,19 @@ import ManageStudent from './pages/ManageStudent'
 import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
 import { PlantillaMatch } from './components/templates'
+import {  RequireAuth, Layout } from './components/atoms'
 
 function App() {
   const [count, setCount] = useState(0)
   return (
     <div className="App">
-      <Routes>
+      <Routes path={"/"} element={<Layout />} >
         <Route path={"/"} element={<ContainerLogin />} />
-        <Route path={"/Dashboard"} element={<PaginaAdmin >
-          <Dashboard />
-        </PaginaAdmin>} />
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/Dashboard"} element={<PaginaAdmin >
+            <Dashboard />
+          </PaginaAdmin>} />
+        </Route>
         <Route path={"/EstudentLoad"} element={<PaginaAdmin >
           <EstudentPageLoad />
         </PaginaAdmin>} />
