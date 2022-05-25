@@ -27,11 +27,11 @@ const templateManageEstudent = () => {
                 <NewStudent />
             </div>
             <div className='px-2'>
-                <OptionTableAdmin filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"student"} />
+                <OptionTableAdmin filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"student"}  text={'Agregar Estudiante'}/>
             </div>
             <br />
             <div className='overflow-scroll'>
-                { <BasicTable datos={filter.data.length? filter:dataApi}  /> }
+                 <BasicTable datos={filter.data.length? filter:dataApi}  /> 
             </div>
 
         </div>

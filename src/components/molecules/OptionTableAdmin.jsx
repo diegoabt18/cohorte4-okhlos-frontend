@@ -7,7 +7,7 @@ import { utils, writeFile } from 'xlsx';
 import { selectDataMentorApi } from '../../redux/slices/dataApiMentorSlice';
 import { Icon } from '@iconify/react';
 
-const OptionTableAdmin = ({ filter, setFilter, load }) => {
+const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
     var data = "";
 
     if (load == "student") {
@@ -47,11 +47,9 @@ const OptionTableAdmin = ({ filter, setFilter, load }) => {
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
                 <label for="my-modal-3" class="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor3 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
                     <p className='flex gap-2 items-center' func={exportFile}>
-                        <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> Agregar Estudiante
+                        <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> {text}
                     </p>
                 </label>
-
-
             </div>
 
         </div>

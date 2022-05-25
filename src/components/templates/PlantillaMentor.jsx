@@ -8,10 +8,10 @@ import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice'
 
 const PlantillaMentor = () => {
 
-  const data = useSelector(selectDataMentorExcel);
- console.log(data)
+    const data = useSelector(selectDataMentorExcel);
+    console.log(data)
 
-  const [filter, setFilter]=useState(data);
+    const [filter, setFilter]=useState(data);
 
   return (
     <div className='grid'>
