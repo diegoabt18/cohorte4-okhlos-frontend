@@ -18,7 +18,7 @@ const TemplateManageMentor = () => {
     return (
             <div className='grid'>
                 <div className='pt-6 pb-4 px-4 font-Roboto'>
-                    <PageOptionsTitle text={"Administrar Estudiantes"} />
+                    <PageOptionsTitle text={"Administrar Mentores"} />
                 </div>
                 <div className='px-2'>
                     <OptionTableAdmin filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"mentor"} />
