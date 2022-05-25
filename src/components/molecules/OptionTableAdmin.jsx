@@ -4,9 +4,18 @@ import { selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
 import { Search, ButtonIconText, ButtonLoadDataBasicExcel, BasicComboBox } from '../atoms'
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
+import { selectDataMentorApi } from '../../redux/slices/dataApiMentorSlice';
 
-const OptionTableAdmin = ({filter, setFilter}) => {
-    const data = useSelector(selectDataEstudentApi);
+const OptionTableAdmin = ({filter, setFilter, load}) => {
+    var data = "";
+
+    if (load=="student"){
+        data=useSelector(selectDataEstudentApi);
+    }else {
+     data=useSelector(selectDataMentorApi);
+    }
+
+
 
     function exportFile() {
         console.log("Si entre pues")

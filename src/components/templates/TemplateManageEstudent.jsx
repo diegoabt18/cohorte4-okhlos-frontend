@@ -26,7 +26,7 @@ const templateManageEstudent = () => {
                 <PageOptionsTitle text={"Administrar Estudiantes"} />
             </div>
             <div className='px-2'>
-                <OptionTableAdmin filter={filter.data.length? filter:dataApi} setFilter={setFilter} />
+                <OptionTableAdmin filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"student"} />
             </div>
             <br />
             <div className='overflow-scroll'>
