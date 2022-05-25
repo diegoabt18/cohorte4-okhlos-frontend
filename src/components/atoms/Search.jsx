@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Icon } from "@iconify/react";
 
 const Search = ({ datos, setFilter }) => {
 
@@ -10,8 +9,6 @@ const Search = ({ datos, setFilter }) => {
     name: datos.name,
     file: true
   }
-
-  console.log(datos.data)
 
   const [searchInput, SetSearchInput] = useState({
     search: '',
@@ -34,6 +31,9 @@ const Search = ({ datos, setFilter }) => {
 
       } else {
         const filter = datos.data.filter(item => {
+          if(typeof item === 'object'){
+            item=Object.values(item)
+          }
           const nameMayus = item[1].toUpperCase()
           if (nameMayus.includes(searchInput.search)) {
             return true
@@ -43,7 +43,6 @@ const Search = ({ datos, setFilter }) => {
           }
 
         })
-        console.log(filter)
         payload.data = filter
         setFilter(payload)
       }

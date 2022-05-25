@@ -4,8 +4,11 @@ import './App.css'
 import { ContainerLogin } from './components/organisms'
 import PaginaAdmin from './pages/PaginaAdmin'
 import EstudentPageLoad from './pages/EstudentPageLoad'
+import MentorPageLoad from './pages/MentorPageLoad'
 import ManageStudent from './pages/ManageStudent'
+import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
+import { PlantillaMatch } from './components/templates'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +25,15 @@ function App() {
         <Route path={"/EstudentManage"} element={<PaginaAdmin >
           <ManageStudent />
         </PaginaAdmin>} />
-       
+        <Route path={"/MentorLoad"} element={<PaginaAdmin >
+          <MentorPageLoad />
+        </PaginaAdmin>} />
+        <Route path={"/MentorManage"} element={<PaginaAdmin >
+          <ManageMentor />
+        </PaginaAdmin>} />
+        <Route path={"/PlantillaMatch"} element={<PaginaAdmin >
+          <PlantillaMatch />
+        </PaginaAdmin>} />
       </Routes>
     </div>
   )

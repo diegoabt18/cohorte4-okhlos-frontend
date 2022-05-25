@@ -1,18 +1,29 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
+import { selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
 import { Search, ButtonIconText, ButtonLoadDataBasicExcel, BasicComboBox } from '../atoms'
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
+import { selectDataMentorApi } from '../../redux/slices/dataApiMentorSlice';
 
-const OptionTable = ({ filter, setFilter }) => {
-    const data = useSelector(selectDataEstudentExcel);
+const OptionTableAdmin = ({filter, setFilter, load}) => {
+    var data = "";
+
+    if (load=="student"){
+        data=useSelector(selectDataEstudentApi);
+    }else {
+     data=useSelector(selectDataMentorApi);
+    }
+
 
 
     function exportFile() {
+        console.log("Si entre pues")
         if (filter.file) {
             /* convert state to workbook */
-            const file = data.columnas.concat(filter.data)
+            
+            const file = data.columnas.concat(Object.values( filter.data))
+            console.log(file)
             const ws = utils.aoa_to_sheet(file);
             const wb = utils.book_new();
             utils.book_append_sheet(wb, ws, "SheetJS");
@@ -20,7 +31,6 @@ const OptionTable = ({ filter, setFilter }) => {
             const namefile = filter.name + ".xlsx";
             writeFile(wb, namefile);
         } else {
-            console.log("q paso");
             ModalAlert("Error al descargar archivo", "No se encontraron datos para descargar", "error")
         }
 
@@ -41,4 +51,4 @@ const OptionTable = ({ filter, setFilter }) => {
     )
 }
 
-export default OptionTable
+export default OptionTableAdmin

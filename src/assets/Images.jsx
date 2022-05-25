@@ -7,6 +7,9 @@ import ImagenLogin from './images/ImagenLogin.png';
 import ImgBienAdmin from './images/ImgBienAdmin.png';
 import imgform from './images/imgform.png';
 import imginf from './images/imginf.png';
+import LogoColorLapiz from './images/Logo-Color-Lapiz.png'
+import ImgConstruccion from './images/ImgConstruccion.png'
+
 
 export default {
     LogoNegroEducamas,
@@ -17,5 +20,7 @@ export default {
     ImagenLogin,
     ImgBienAdmin,
     imgform,
-    imginf
+    imginf,
+    LogoColorLapiz,
+    ImgConstruccion,
 }
