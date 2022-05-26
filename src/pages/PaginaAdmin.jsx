@@ -2,7 +2,7 @@ import React from "react";
 import {
   Footer,
   NavbarDashboard,
-  NavbarResponsive,
+  SidebarResponsive,
   SidebarDashboard,
 } from "../components/templates";
 
@@ -14,8 +14,8 @@ const PaginaAdmin = ({ children }) => {
           <div className="hidden lg:block">
             <SidebarDashboard />
           </div>
-          <div className="lg:hidden w-min">
-            <NavbarResponsive />
+          <div className="lg:hidden w-max ">
+            <SidebarResponsive />
           </div>
         </div>
         <div className="w-full flex flex-col justify-between h-screen  ">

@@ -2,7 +2,7 @@ import React from 'react'
 import MenuResponsive from '../organisms/MenuResponsive'
 import MenuResponsiveCabecera from '../organisms/MenuResponsiveCabecera'
 
-const NavbarResponsive = () => {
+const SidebarResponsive = () => {
   return (
     <div>
     <MenuResponsiveCabecera/>
@@ -11,4 +11,4 @@ const NavbarResponsive = () => {
   )
 }
 
-export default NavbarResponsive
+export default SidebarResponsive

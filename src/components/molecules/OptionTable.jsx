@@ -45,10 +45,9 @@ const OptionTable = ({filter, setFilter, load}) => {
                 <Search datos={data} setFilter={setFilter}/>
             </div>
             <div className='flex'>
-                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile}/>
                 <ButtonLoadDataBasicExcel load={load} />
-                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData} />
-                
+                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} />
+                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile}/>
             </div>
 
         </div>

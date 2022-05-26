@@ -6,5 +6,5 @@ export {default as TemplateManageEstudent} from './TemplateManageEstudent';
 export {default as TemplateManageMentor} from './TemplateManageMentor';
 export {default as Footer } from './Footer';
 export {default as PlantillaMatch} from './PlantillaMatch';
-export {default as NavbarResponsive} from './NavbarResponsive';
+export {default as SidebarResponsive} from './SidebarResponsive';
 
