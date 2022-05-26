@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import authServices from '../../api/services/authServices'
+import jwtDecode from 'jwt-decode';
 
 const initialState = {
     user: {},
@@ -41,7 +42,9 @@ export const authSlice = createSlice({
         // Add reducers for additional action types here, and handle loading state as needed
         builder.addCase(login.fulfilled, (state, action) => {
           // Add user to the state array
-          state.user=(action.payload)
+          console.log(action.payload)
+          const decode=jwtDecode(action.payload.accesToken)
+          state.user=decode
         })
       },
 })

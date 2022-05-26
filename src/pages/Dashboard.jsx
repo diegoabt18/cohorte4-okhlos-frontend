@@ -5,10 +5,7 @@ import { Icon } from '@iconify/react'
 const Dashboard = () => {
     return (
         <div>
-            <div className='flex'>
-            <Icon className=' text-[4rem]' icon={"eos-icons:bubble-loading"}/> 
-            Loading Data
-            </div>    
+             
             <Welcome />
             <CardsInfoGeneral />
             <div className=' '>

@@ -1,34 +1,40 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Navigate, NavLink } from 'react-router-dom'
 import { BasicButton, BasicInputText, LinkForgetPassword, LogoColorLapiz, } from '../atoms'
-import {login} from "../../redux/slices/authSlice"
+import { login } from "../../redux/slices/authSlice"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { Icon } from '@iconify/react'
 
 const Login = () => {
-    const navigate=useNavigate()
-    const dispatch =useDispatch()
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
     const [data, setData] = useState({
         username: '',
         password: ''
     })
+    const [load, setLoad] = useState(false)
 
     const handleInputChange = (event) => {
         setData({
             ...data,
-            [event.target.name] : event.target.value
+            [event.target.name]: event.target.value
         })
     }
-    
+
     function click() {
         console.log(data)
         dispatch(login(data))
-        navigate("/Dashboard")
+        setLoad(true)
+        setTimeout(() => {
+            setLoad(false)
+            navigate("/Dashboard")
+        }, 3000)
     }
 
     return (
         <div className='flex gap-y-7 items-center justify-center flex-col w-full '>
-            <LogoColorLapiz/>
+            <LogoColorLapiz />
             <h2 className='font-Roboto text-PrimarioColor1 mt-10 text-3xl pb-8 font-bold text-center'>
                 Bienvenido a OKHLOS
             </h2>
@@ -42,7 +48,10 @@ const Login = () => {
 
             </NavLink>
              */}
-                <BasicButton text={"Ingresar"} func={click}/>
+            {load ? <Icon className=' text-[2rem]' icon={"eos-icons:bubble-loading"} />
+                : <BasicButton text={"Ingresar"} func={click} />
+            }
+
 
             <LinkForgetPassword />
         </div>

@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Select from 'react-select'
+import matchServices from '../../api/services/matchServices'
 
 const BasicComboBox = () => {
-    const options = [
-        { value: 'chocolate', label: 'Chocolate' },
-        { value: 'strawberry', label: 'Strawberry' },
-        { value: 'vanilla', label: 'Vanilla' }
-    ]
-    
+
+    const [cohorte, setCohorte] = useState([])
+
+    useEffect(() => {
+        const data = matchServices.getPrograms()
+        data.then(respuesta => {
+            console.log(respuesta)
+            setCohorte(respuesta)
+        })
+
+    }, [])
+
     return (
-        <Select className='w-[200px]' options={options} />
+        <Select className='w-[200px]' options={cohorte} placeholder={"Cohorte"} />
     )
 }
 

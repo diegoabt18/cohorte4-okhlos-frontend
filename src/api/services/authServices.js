@@ -2,6 +2,7 @@ import React from 'react'
 import axios from '../axios.js'
 import jwtDecode from 'jwt-decode'
 
+
 const login = async (username, password) => {
     console.log(username, password)
     const data = {
@@ -16,13 +17,15 @@ const login = async (username, password) => {
             if (response.data.accesToken) {
                 localStorage.setItem("user", JSON.stringify(response.data.accesToken));
             }
-
             return response.data;
         });
+       
 }
 
 const logout = () => {
     localStorage.removeItem("user");
+    location.reload();
+
 }
 
 const isLogin = () => {

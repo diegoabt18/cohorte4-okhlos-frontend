@@ -5,6 +5,7 @@ import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
 import { Search, ButtonIconText, ButtonLoadDataBasicExcel } from '../atoms'
 import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
+import studentServices from '../../api/services/studentServices'
 
 const OptionTable = ({filter, setFilter, load}) => {
     var data = "";
@@ -33,6 +34,11 @@ const OptionTable = ({filter, setFilter, load}) => {
 
     }
 
+    function insertData(){
+       
+        studentServices.registerAll(data)
+    }
+
     return (
         <div className='flex justify-between items-center'>
             <div>
@@ -41,7 +47,7 @@ const OptionTable = ({filter, setFilter, load}) => {
             <div className='flex'>
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile}/>
                 <ButtonLoadDataBasicExcel load={load} />
-                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} />
+                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData} />
                 
             </div>
 

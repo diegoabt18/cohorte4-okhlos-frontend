@@ -1,5 +1,6 @@
 import axios from '../axios.js'
 
+
 const getAllStudents = async () => {
     //console.log(username, password)
     return await axios
@@ -19,18 +20,12 @@ const logout = () => {
 }
 
 
-const register = (username, password, name, role, last_name, email, address, cellphone) => {
-    return axios.post("user", {
-        username,
-        password,
-        name,
-        role,
-        last_name,
-        email,
-        address,
-        cellphone
+const  registerAll =  async (data) => {
+    return await axios.post("/StudentMasiva", data.data)
+    .then((res)=>{
+        console.log(res)
     });
 }
 
 
-export default { getAllStudents, logout, register }
+export default { getAllStudents, logout, registerAll }

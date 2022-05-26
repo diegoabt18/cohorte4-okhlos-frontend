@@ -1,10 +1,14 @@
 import { Navigate, Outlet } from "react-router-dom";
 import authServices from "../../api/services/authServices"
+import { useSelector } from "react-redux";
+import {selectAuth} from "../../redux/slices/authSlice";
+import { useEffect } from "react";
+import { useState } from "react";
 
 const RequireAuth = ({ allowedRoles }) => {
  
   const token= authServices.isLogin()
-  
+
   console.log("aqui esta el token")
   console.log(token)
   // return auth.rol && allowedRoles.includes(auth.rol[0]) ? (
@@ -12,6 +16,7 @@ const RequireAuth = ({ allowedRoles }) => {
     (token.role==allowedRoles? <Outlet />: <Navigate to="/Unauthorized" /> )
     
   ) : <Navigate to="/" />
+  
 };
 
 export default RequireAuth;

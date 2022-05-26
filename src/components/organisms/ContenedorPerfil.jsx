@@ -3,8 +3,14 @@ import { BasicButton, BasicButtonIcon } from '../atoms'
 
 import Perfil from '../molecules/Perfil'
 import UserLogin from '../molecules/UserLogin'
+import authServices from '../../api/services/authServices'
 
 const ContenedorPerfil = () => {
+
+    function salir() {
+        authServices.logout()
+    }
+
     return (
         <div className='z-20'>
             <ul className="menu menu-horizontal bg-base-100  px-4  ">
@@ -14,7 +20,7 @@ const ContenedorPerfil = () => {
                         <a>
                             <Perfil />
                             <div className=' flex justify-end mt-3'>
-                                <BasicButton text={"Salir"}/>
+                                <BasicButton text={"Salir"} func={salir}/>
                             </div>
                         </a>
                     </ul>

@@ -10,37 +10,52 @@ import ManageStudent from './pages/ManageStudent'
 import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
 import Sesiones from './pages/Sesiones'
-import {  RequireAuth, Layout } from './components/atoms'
+import { RequireAuth, Layout, Unauthorized } from './components/atoms'
 
 function App() {
   const [count, setCount] = useState(0);
   return (
     <div className="App">
       <Routes path={"/"} element={<Layout />} >
+        {/*rutas publicas*/}
         <Route path={"/"} element={<ContainerLogin />} />
+        <Route path="/unauthorized" element={<Unauthorized />} />
+        {/*rutas privadas*/}
         <Route element={<RequireAuth allowedRoles={"admin"} />} >
           <Route path={"/Dashboard"} element={<PaginaAdmin >
             <Dashboard />
           </PaginaAdmin>} />
         </Route>
-        <Route path={"/EstudentLoad"} element={<PaginaAdmin >
-          <EstudentPageLoad />
-        </PaginaAdmin>} />
-        <Route path={"/EstudentManage"} element={<PaginaAdmin >
-          <ManageStudent />
-        </PaginaAdmin>} />
-        <Route path={"/MentorLoad"} element={<PaginaAdmin >
-          <MentorPageLoad />
-        </PaginaAdmin>} />
-        <Route path={"/MentorManage"} element={<PaginaAdmin >
-          <ManageMentor />
-        </PaginaAdmin>} />
-        <Route path={"/PlantillaMatch"} element={<PaginaAdmin >
-          <PlantillaMatch />
-        </PaginaAdmin>} />
-        <Route path={"/Sesiones"} element={<PaginaAdmin>
-          <Sesiones />
-        </PaginaAdmin>} />
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/EstudentLoad"} element={<PaginaAdmin >
+            <EstudentPageLoad />
+          </PaginaAdmin>} />
+        </Route>
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/EstudentManage"} element={<PaginaAdmin >
+            <ManageStudent />
+          </PaginaAdmin>} />
+        </Route>
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/MentorLoad"} element={<PaginaAdmin >
+            <MentorPageLoad />
+          </PaginaAdmin>} />
+        </Route>
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/MentorManage"} element={<PaginaAdmin >
+            <ManageMentor />
+          </PaginaAdmin>} />
+        </Route>
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/PlantillaMatch"} element={<PaginaAdmin >
+            <PlantillaMatch />
+          </PaginaAdmin>} />
+        </Route>
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/Sesiones"} element={<PaginaAdmin>
+            <Sesiones />
+          </PaginaAdmin>} />
+        </Route>
       </Routes>
     </div>
   );

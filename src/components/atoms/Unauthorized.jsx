@@ -3,7 +3,7 @@ import React from "react";
 const Unauthorized = () => {
   return (
     <div
-      className="text-white min-h-screen bg-dark flex content-center align-center justify-center"
+      className="text-black min-h-screen bg-dark flex content-center align-center justify-center"
       style={{ paddingTop: "6rem" }}
     >
       {" "}
