@@ -44,12 +44,13 @@ const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
             </div>
             <div className='flex gap-2'>
                 <BasicComboBox />
-                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
-                <label for="my-modal-3" class="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor3 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
+                <label for="my-modal-3" class="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor5 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
                     <p className='flex gap-2 items-center' func={exportFile}>
                         <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> {text}
                     </p>
+                    
                 </label>
+                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
             </div>
 
         </div>

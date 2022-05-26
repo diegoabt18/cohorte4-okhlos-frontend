@@ -14,7 +14,7 @@ const PaginaAdmin = ({ children }) => {
           <div className="hidden lg:block">
             <SidebarDashboard />
           </div>
-          <div className="lg:hidden w-min">
+          <div className="lg:hidden w-max ">
             <SidebarResponsive />
           </div>
         </div>
