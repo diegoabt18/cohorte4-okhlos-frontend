@@ -1,6 +1,7 @@
 import React from 'react'
-import { AdminWithName } from '../molecules'
-import { LogoMenuSidebar, PhotoProfile } from '../atoms'
+import AdminWithName from '../molecules/AdminWithName'
+import LogoMenuSidebar from '../atoms/LogoMenuSidebar'
+import PhotoProfile  from '../atoms/PhotoProfile'
 
 const MenuCabeceraDesktop = () => {
   return (

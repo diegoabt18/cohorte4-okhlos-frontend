@@ -1,5 +1,5 @@
 import React from 'react'
-import {PlantillaMentor} from '../components/templates'
+import PlantillaMentor from '../components/templates/PlantillaMentor'
 
 const MentorPageLoad = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
-import { BasicButton } from '../atoms'
-import { DataMentor } from '../molecules'
+import BasicButton  from '../atoms/BasicButton'
+import DataMentor  from '../molecules/DataMentor'
 
 const NewMentor = () => {
     return (

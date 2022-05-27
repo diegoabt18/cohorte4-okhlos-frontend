@@ -1,11 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
-import { Search, ButtonIconText, ButtonLoadDataBasicExcel, BasicComboBox } from '../atoms'
-import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
 import { selectDataMentorApi } from '../../redux/slices/dataApiMentorSlice';
 import { Icon } from '@iconify/react';
+import ModalAlert from '../atoms/ModalAlert';
+import Search from '../atoms/Search'
+import ButtonIconText from '../atoms/ButtonIconText'
+import BasicComboBox from '../atoms/BasicComboBox'
 
 const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
     var data = "";

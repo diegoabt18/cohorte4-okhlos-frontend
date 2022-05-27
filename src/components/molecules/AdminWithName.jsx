@@ -1,5 +1,6 @@
 import React from 'react'
-import {PersonName, Rol, } from '../atoms'
+import PersonName from '../atoms/PersonName'
+import Rol from '../atoms/Rol'
 
 const AdminWithName = () => {
   return (

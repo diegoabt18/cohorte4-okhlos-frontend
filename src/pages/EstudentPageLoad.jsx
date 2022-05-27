@@ -1,5 +1,5 @@
 import React from 'react'
-import {PlantillaEstudent} from '../components/templates'
+import PlantillaEstudent from '../components/templates/PlantillaEstudent'
 
 const EstudentPageLoad = () => {
   return (

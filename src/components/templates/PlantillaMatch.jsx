@@ -1,7 +1,7 @@
 import React from "react";
-import { PageOptionsTitle } from "../molecules";
+import PageOptionsTitle from "../molecules/PageOptionsTitle";
 import MatchTableOptions from "../organisms/MatchTableOptions";
-import { BasicTable } from "../organisms";
+import BasicTable from "../organisms/BasicTable";
 
 const PlantillaMatch = () => {
   const datos={

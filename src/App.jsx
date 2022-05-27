@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { ContainerLogin } from './components/organisms'
-import { PlantillaMatch } from './components/templates'
+import ContainerLogin from './components/organisms/ContainerLogin'
+import PlantillaMatch from './components/templates/PlantillaMatch'
 import PaginaAdmin from './pages/PaginaAdmin'
 import EstudentPageLoad from './pages/EstudentPageLoad'
 import MentorPageLoad from './pages/MentorPageLoad'
@@ -10,7 +10,10 @@ import ManageStudent from './pages/ManageStudent'
 import ManageMentor from './pages/ManageMentor'
 import Dashboard from './pages/Dashboard'
 import Sesiones from './pages/Sesiones'
-import { RequireAuth, Layout, Unauthorized } from './components/atoms'
+import RequireAuth from './components/atoms/RequireAuth'
+import Layout from './components/atoms/Layout'
+import Unauthorized from './components/atoms/Unauthorized'
+
 
 function App() {
   const [count, setCount] = useState(0);

@@ -1,7 +1,5 @@
 import React from "react";
-import { BasicButton } from "../atoms";
-import AddStudent from "../molecules/AddStudent";
-import ComboBoxPreferStudent from "../molecules/ComboBoxPreferStudent";
+import BasicButton from "../atoms/BasicButton";
 import DataStudent from "../molecules/DataStudent";
 
 const NewStudent = ({ text }) => {

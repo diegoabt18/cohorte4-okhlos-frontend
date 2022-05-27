@@ -1,5 +1,6 @@
 import React from 'react'
-import { InputDate, InputNombre } from '../atoms'
+import InputNombre from '../atoms/InputNombre'
+import InputDate from '../atoms/InputDate'
 import BasicComboForm from '../atoms/BasicComboForm'
 import ComboBoxPreferStudent from './ComboBoxPreferStudent'
 

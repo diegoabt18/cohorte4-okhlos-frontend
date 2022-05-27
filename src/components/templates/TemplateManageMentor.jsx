@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { OptionTableAdmin, PageOptionsTitle } from '../molecules';
-import { BasicTable, NewMentor } from '../organisms';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllMentor, selectDataMentorApi } from '../../redux/slices/dataApiMentorSlice';
-
-
+import OptionTableAdmin from '../molecules/OptionTableAdmin';
+import PageOptionsTitle from '../molecules/PageOptionsTitle';
+import BasicTable from '../organisms/BasicTable';
+import NewMentor  from '../organisms/NewMentor';
 
 const TemplateManageMentor = () => {
     useEffect(() => {

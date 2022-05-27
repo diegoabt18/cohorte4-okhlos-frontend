@@ -1,6 +1,7 @@
 import React from 'react'
-import { ButtonTable } from '../atoms'
 import { Icon } from '@iconify/react'
+import ButtonTable from '../atoms/ButtonTable'
+
 
 const BasicTable = ({ datos }) => {
     console.log(datos.data)

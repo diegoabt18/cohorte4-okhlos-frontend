@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconMenu } from '../atoms'
+import IconMenu from '../atoms/IconMenu'
 
 const ItemMenu = ({ icon, text, children }) => {
   return (

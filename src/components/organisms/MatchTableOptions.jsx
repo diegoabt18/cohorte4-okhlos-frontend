@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { BasicComboBox, ButtonIconText } from "../atoms";
+import BasicComboBox from "../atoms/BasicComboBox";
+import ButtonIconText from "../atoms/ButtonIconText";
 import matchServices from "../../api/services/matchServices";
 
 const MatchTableOptions = () => {

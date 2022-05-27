@@ -1,6 +1,6 @@
 import React from 'react'
-import {BienvenidaOkhlos, DashboardOptions, } from '../molecules'
-
+import BienvenidaOkhlos from '../molecules/BienvenidaOkhlos'
+import DashboardOptions from '../molecules/DashboardOptions'
 
 const Welcome = () => {
   return (

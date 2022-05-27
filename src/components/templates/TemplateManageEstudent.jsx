@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { OptionTableAdmin, PageOptionsTitle } from '../molecules';
-import { BasicTable, NewStudent } from '../organisms';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllStudent, selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
-
+import OptionTableAdmin from '../molecules/OptionTableAdmin';
+import PageOptionsTitle from '../molecules/PageOptionsTitle';
+import BasicTable from '../organisms/BasicTable';
+import NewStudent from '../organisms/NewStudent';
 
 const templateManageEstudent = () => {
     //Llenar tabla con datos de la bases de datos

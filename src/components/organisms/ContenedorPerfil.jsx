@@ -1,6 +1,5 @@
 import React from 'react'
-import { BasicButton, BasicButtonIcon } from '../atoms'
-
+import BasicButton from '../atoms/BasicButton'
 import Perfil from '../molecules/Perfil'
 import UserLogin from '../molecules/UserLogin'
 import authServices from '../../api/services/authServices'

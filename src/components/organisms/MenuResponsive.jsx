@@ -1,8 +1,8 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { BasicButtonIcon, IconMenu } from "../atoms";
-import { IconMenuResponsive, ItemMenu } from "../molecules";
-
+import BasicButtonIcon from "../atoms/BasicButtonIcon";
+import IconMenu from "../atoms/IconMenu";
+import IconMenuResponsive from "../molecules/IconMenuResponsive";
 
 const MenuResponsive = () => {
   return (

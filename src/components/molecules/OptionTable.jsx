@@ -2,10 +2,12 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
 import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
-import { Search, ButtonIconText, ButtonLoadDataBasicExcel } from '../atoms'
-import { ModalAlert } from '../atoms';
 import { utils, writeFile } from 'xlsx';
 import studentServices from '../../api/services/studentServices'
+import ModalAlert from '../atoms/ModalAlert';
+import Search from '../atoms/Search'
+import ButtonIconText from '../atoms/ButtonIconText'
+import ButtonLoadDataBasicExcel from '../atoms/ButtonLoadDataBasicExcel'
 
 const OptionTable = ({filter, setFilter, load}) => {
     var data = "";

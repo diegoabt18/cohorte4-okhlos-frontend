@@ -1,5 +1,6 @@
 import React from 'react'
-import { BasicButton, TextInfoDashBoard } from '../atoms'
+import BasicButton from '../atoms/BasicButton'
+import TextInfoDashBoard  from '../atoms/TextInfoDashBoard'
 
 const DashboardOptions = () => {
   return (

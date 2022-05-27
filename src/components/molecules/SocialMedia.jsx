@@ -1,5 +1,5 @@
 import React from 'react'
-import { BasicButtonIcon } from '../atoms'
+import BasicButtonIcon from '../atoms/BasicButtonIcon'
 
 
 const SocialMedia = () => {

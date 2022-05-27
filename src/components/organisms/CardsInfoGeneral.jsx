@@ -1,5 +1,5 @@
 import React from "react";
-import { CardsInfo } from "../molecules";
+import CardsInfo from "../molecules/CardsInfo";
 
 const CardsInfoGeneral = () => {
   return (

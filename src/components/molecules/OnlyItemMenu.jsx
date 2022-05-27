@@ -1,6 +1,6 @@
 import React from 'react'
-import { IconMenu } from '../atoms'
 import { NavLink } from 'react-router-dom'
+import IconMenu from '../atoms/IconMenu'
 
 const OnlyItemMenu = ({ icon, text, toLink }) => {
   return (

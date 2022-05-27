@@ -1,5 +1,6 @@
 import React from "react";
-import { TitleAddEstudiante, XCloseBtn } from "../atoms";
+import TitleAddEstudiante from "../atoms/TitleAddEstudiante";
+import XCloseBtn from "../atoms/XCloseBtn";
 
 const AddStudent = () => {
   return (

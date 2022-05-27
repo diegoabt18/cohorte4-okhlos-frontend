@@ -1,6 +1,7 @@
 import React from 'react'
-import { BasicButton, PersonName, PhotoProfile, Rol } from '../atoms'
-
+import PersonName from '../atoms/PersonName'
+import PhotoProfile from '../atoms/PhotoProfile'
+import Rol from '../atoms/Rol'
 
 const Perfil = () => {
     return (

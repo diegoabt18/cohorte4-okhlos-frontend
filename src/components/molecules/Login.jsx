@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
-import { Navigate, NavLink } from 'react-router-dom'
-import { BasicButton, BasicInputText, LinkForgetPassword, LogoColorLapiz, } from '../atoms'
 import { login } from "../../redux/slices/authSlice"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react'
+import LogoColorLapiz from '../atoms/LogoColorLapiz'
+import BasicButton from '../atoms/BasicButton'
+import BasicInputText from '../atoms/BasicInputText'
+import LinkForgetPassword from '../atoms/LinkForgetPassword'
 
 const Login = () => {
     const navigate = useNavigate()
