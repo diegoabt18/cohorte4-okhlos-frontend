@@ -7,7 +7,7 @@ import ImagenLogin from './images/ImagenLogin.png';
 import ImgBienAdmin from './images/ImgBienAdmin.png';
 import imgform from './images/imgform.png';
 import imginf from './images/imginf.png';
-import LogoColorLapiz from './images/Logo-Color-Lapiz.png'
+import LogoColorLapiz from './images/Logo-color-lapiz.png'
 import ImgConstruccion from './images/ImgConstruccion.png'
 
 
