@@ -6,7 +6,7 @@ const BasicButton = ({text, func}) => {
             bg-PrimarioColor2 
             text-PrimarioColor5 
             hover:bg-PrimarioColor1 
-            hover:text-PrimarioColor3 
+            hover:text-PrimarioColor5 
             font-Roboto 
             font-bold  
             py-2 

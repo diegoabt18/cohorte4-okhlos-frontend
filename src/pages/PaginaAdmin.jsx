@@ -1,8 +1,8 @@
 import React from "react";
-import Footer from "../Components/templates/Footer"
-import NavbarDashboard from "../Components/templates/NavbarDashboard"
-import SidebarResponsive from "../Components/templates/SidebarResponsive"
-import SidebarDashboard from "../Components/templates/SidebarDashboard"
+import Footer from "../components/templates/Footer"
+import NavbarDashboard from "../components/templates/NavbarDashboard"
+import SidebarResponsive from "../components/templates/SidebarResponsive"
+import SidebarDashboard from "../components/templates/SidebarDashboard"
 
 
 const PaginaAdmin = ({ children }) => {
