@@ -1,5 +1,5 @@
 import React from "react";
-import SocialMedia from "../molecules/SocialMedia";
+import {SocialMedia} from "../molecules";
 import Images from "../../assets";
 
 const Footer = () => {

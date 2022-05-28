@@ -1,8 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import OnlyItemMenu from "../molecules/OnlyItemMenu";
-import ItemMenu  from "../molecules/ItemMenu";
-import IconMenu from "../atoms/IconMenu";
+import {OnlyItemMenu, ItemMenu} from "../molecules";
+import {IconMenu} from "../atoms";
 
 const MenuDesktop = () => {
   return (

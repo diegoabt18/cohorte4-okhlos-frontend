@@ -1,7 +1,5 @@
 import React from 'react'
-import IconCard from '../atoms/IconCard'
-import CardInfo from '../atoms/CardInfo'
-import BtnInfo from '../atoms/BtnInfo'
+import {IconCard, CardInfo, BtnInfo} from '../atoms'
 
 const CardsInfo = ({color, text, dato}) => {
   return (

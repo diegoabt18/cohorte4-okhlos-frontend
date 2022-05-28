@@ -1,7 +1,5 @@
 import React from 'react'
-import CardsInfoGeneral from '../components/organisms/CardsInfoGeneral'
-import ImgFase2 from '../components/organisms/ImgFase2'
-import Welcome  from '../components/organisms/Welcome'
+import {CardsInfoGeneral, ImgFase2, Welcome} from '../components/organisms'
 
 const Dashboard = () => {
     return (

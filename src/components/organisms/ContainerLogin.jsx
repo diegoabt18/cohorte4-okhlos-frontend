@@ -1,6 +1,6 @@
 import React from 'react'
-import ImageLogin from '../atoms/ImageLogin'
-import Login from '../molecules/Login'
+import {ImageLogin} from '../atoms'
+import { Login } from '../molecules'
 
 const ContainerLogin = () => {
     return (

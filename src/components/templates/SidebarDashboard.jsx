@@ -1,6 +1,5 @@
 import React from 'react'
-import MenuCabeceraDesktop from '../organisms/MenuCabeceraDesktop'
-import MenuDesktop  from '../organisms/MenuDesktop'
+import {MenuCabeceraDesktop, MenuDesktop} from '../organisms'
 
 const SidebarDashboard = () => {
     return (

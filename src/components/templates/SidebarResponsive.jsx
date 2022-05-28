@@ -1,6 +1,5 @@
 import React from 'react'
-import MenuResponsive from '../organisms/MenuResponsive'
-import MenuResponsiveCabecera from '../organisms/MenuResponsiveCabecera'
+import {MenuResponsive, MenuResponsiveCabecera} from '../organisms'
 
 const SidebarResponsive = () => {
   return (

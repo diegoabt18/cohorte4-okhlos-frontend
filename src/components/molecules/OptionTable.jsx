@@ -4,10 +4,8 @@ import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlic
 import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
 import { utils, writeFile } from 'xlsx';
 import studentServices from '../../api/services/studentServices'
-import ModalAlert from '../atoms/ModalAlert';
-import Search from '../atoms/Search'
-import ButtonIconText from '../atoms/ButtonIconText'
-import ButtonLoadDataBasicExcel from '../atoms/ButtonLoadDataBasicExcel'
+import {ModalAlert, Search, ButtonIconText, ButtonLoadDataBasicExcel} from '../atoms';
+
 
 const OptionTable = ({filter, setFilter, load}) => {
     var data = "";

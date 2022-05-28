@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
-import ButtonTable from '../atoms/ButtonTable'
-import ButtonLoadDataExcel from '../atoms/ButtonLoadDataExcel'
+import {ButtonTable, ButtonLoadDataExcel} from '../atoms'
 import {utils, writeFile} from "xlsx";
 
 

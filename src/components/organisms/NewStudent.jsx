@@ -1,6 +1,6 @@
 import React from "react";
-import BasicButton from "../atoms/BasicButton";
-import DataStudent from "../molecules/DataStudent";
+import {BasicButton} from "../atoms";
+import { DataStudent } from "../molecules";
 
 const NewStudent = ({ text }) => {
     return (

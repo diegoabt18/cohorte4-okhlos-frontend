@@ -1,5 +1,5 @@
 import React from 'react';
-import PaginaAdmin from '../pages/PaginaAdmin';
+import {PaginaAdmin} from '../pages';
 
 const Prueba = () => {
 

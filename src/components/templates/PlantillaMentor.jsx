@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice'
-import Table from '../organisms/Table'
-import OptionTable from '../molecules/OptionTable'
-import TitlePage from '../atoms/TitlePage'
+import {Table} from '../organisms'
+import {OptionTable} from '../molecules'
+import {TitlePage} from '../atoms'
 
 
 const PlantillaMentor = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import TemplateManageMentor from '../components/templates/TemplateManageMentor'
+import {TemplateManageMentor} from '../components/templates'
 
 
 const ManageMentor = () => {

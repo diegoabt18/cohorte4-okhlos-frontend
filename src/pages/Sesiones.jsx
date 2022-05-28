@@ -1,5 +1,5 @@
 import React from 'react'
-import ImgConstruccion from '../components/atoms/ImgConstruccion'
+import {ImgConstruccion} from '../components/atoms'
 import PageOptionTitle from '../components/molecules/PageOptionsTitle'
 
 const Sesiones = () => {

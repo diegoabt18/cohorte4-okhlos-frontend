@@ -1,6 +1,5 @@
 import React from 'react'
-import ButtonEscuela from '../atoms/ButtonEscuela'
-import TitlePage from '../atoms/TitlePage'
+import {ButtonEscuela, TitlePage} from '../atoms'
 
 const PageOptionsTitle = ({text}) => {
     return (

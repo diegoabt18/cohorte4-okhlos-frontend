@@ -1,5 +1,5 @@
 import React from 'react'
-import MultiComboBox from '../atoms/MultiComboBox'
+import {MultiComboBox} from '../atoms'
 
 const ComboBoxPreferStudent = ({text}) => {
     return (

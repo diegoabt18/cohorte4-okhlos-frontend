@@ -4,10 +4,8 @@ import { selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
 import { utils, writeFile } from 'xlsx';
 import { selectDataMentorApi } from '../../redux/slices/DataApiMentorSlice';
 import { Icon } from '@iconify/react';
-import ModalAlert from '../atoms/ModalAlert';
-import Search from '../atoms/Search'
-import ButtonIconText from '../atoms/ButtonIconText'
-import BasicComboBox from '../atoms/BasicComboBox'
+import {ModalAlert, Search, ButtonIconText,BasicComboBox} from '../atoms';
+
 
 const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
     var data = "";
