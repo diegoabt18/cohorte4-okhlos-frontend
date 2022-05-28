@@ -1,5 +1,5 @@
 import React from 'react';
-import Images from '../../assets/Images'
+import Images from '../../assets'
 
 //EL logo es blanco 
 const LogoFooter = () => {
