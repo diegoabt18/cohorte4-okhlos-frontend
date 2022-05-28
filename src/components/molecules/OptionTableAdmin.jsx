@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
 import { utils, writeFile } from 'xlsx';
-import { selectDataMentorApi } from '../../redux/slices/dataApiMentorSlice';
+import { selectDataMentorApi } from '../../redux/slices/DataApiMentorSlice';
 import { Icon } from '@iconify/react';
 import ModalAlert from '../atoms/ModalAlert';
 import Search from '../atoms/Search'
