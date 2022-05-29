@@ -45,7 +45,7 @@ const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
             <div className='flex gap-2'>
                 <BasicComboBox />
                 <label htmlFor="my-modal-3" className="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor5 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
-                    <div className='flex gap-2 items-center' onClick={exportFile}>
+                    <div className='flex gap-2 items-center'>
                         <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> {text}
                     </div>
                     
