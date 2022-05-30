@@ -20,8 +20,6 @@ const MultiComboBox = ({text, setFunc, state}) => {
     useEffect(() => {
         const intereses =  studentServices.getintereses() 
             intereses.then(respuesta => {
-          
-            
                 setInteres(respuesta)
         })
 

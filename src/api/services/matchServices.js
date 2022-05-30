@@ -10,11 +10,20 @@ const getPrograms = async () => {
             const data=response.data;
             var datos=[]
             data.forEach(element => {
-                datos.push(
+                if (element.cohort == 0 ){
+                    datos.push(
+                        {
+                            value: element.cohort, label: 'Proyectate' 
+                        }
+                    )
+                }else{
+                    datos.push(
                     {
-                        value: element.cohort, label: 'cohorte '+element.cohort 
+                        value: element.cohort, label: 'Programate Cohorte '+element.cohort 
                     }
-                )
+                )}
+
+                
             });
                 return datos
         });

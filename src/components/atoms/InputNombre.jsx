@@ -1,12 +1,12 @@
 import React from 'react'
 
-const InputNombre = ({text, type, name, placeholder}) => {
+const InputNombre = ({text, type, name, placeholder, func}) => {
     return (
         <label className="block ">
             <span className=" font-Roboto after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                {text}
             </span>
-            <input 
+            <input onChange={func}
                 type={type}
                 name={name} 
                 placeholder={placeholder} 
