@@ -7,7 +7,7 @@ const NewStudent = ({ text }) => {
     <div>
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
       <div className="modal ">
-        <div className="modal-box h-[80%] w-screen flex flex-col justify-between overflow-hidden">
+        <div className="modal-box h-[100%] w-screen flex flex-col justify-between overflow-hidden">
           <div >
             <label
               htmlFor="my-modal-3"

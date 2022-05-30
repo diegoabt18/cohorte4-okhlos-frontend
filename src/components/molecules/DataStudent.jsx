@@ -29,31 +29,32 @@ const DataStudent = () => {
   }
 
   function selectOptionProgram(event) {
-      console.log(event)
+    console.log(event)
     setDataForm({
       ...DataForm,
       program: event.label,
     });
   }
 
-  
+
   function submmit() {
     const form = [
       DataForm.name,
       DataForm.email,
-      parseInt (DataForm.cohorte),
-      parseInt (DataForm.age),
-      parseInt (DataForm.phone),
+      parseInt(DataForm.cohorte),
+      parseInt(DataForm.age),
+      parseInt(DataForm.phone),
       DataForm.status,
       DataForm.gender,
       DataForm.program,
-      parseInt (multiOption[1].value),
-      parseInt (multiOption[0].value),
+      parseInt(multiOption[1].value),
+      parseInt(multiOption[0].value),
     ];
     studentServices.registerStudent(form);
-    setTimeout(()=>{ModalAlert("Ok", "Registro Estudiante Efectuado", "success" )
+    setTimeout(() => {
+      ModalAlert("Ok", "Registro Estudiante Efectuado", "success")
     }, 2000)
-}
+  }
 
   const handleInputChange = (event) => {
     setDataForm({
@@ -131,26 +132,28 @@ const DataStudent = () => {
           />
         </div>
         <div>
+          <ComboBoxPreferStudent
+            setFunc={setMultiopcion}
+            state={multiOption}
+            text={"Preferencias"}
+          />
+          <p className="font-GilroyLight font-semibold ">
+            Seleccionar el tema de mayor interes, luego el de menor interes.
+          </p>
+        </div>
+        <div>
           <BasicComboForm
             func={selectOptionProgram}
             text={"Programa"}
             options={program}
           />
         </div>
-        <div>
-          <p className="font-GilroyLight font-semibold ">
-            Seleccionar el tema de mayor interes, luego el de menor interes.
-          </p>
-          <ComboBoxPreferStudent
-            setFunc={setMultiopcion}
-            state={multiOption}
-            text={"Preferencias"}
-          />
-        </div>
+
       </div>
       <div className="flex justify-end w-full ">
         <BasicButton func={submmit} text={"Submit"} />
       </div>
+
     </div>
   );
 };
