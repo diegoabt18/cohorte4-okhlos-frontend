@@ -22,9 +22,7 @@ const NewStudent = ({ text }) => {
               <DataStudent />
             </div>
           </div>
-          <div className="flex justify-end w-full ">
-            <BasicButton text={"Submit"} />
-          </div>
+          
         </div>
       </div>
     </div>

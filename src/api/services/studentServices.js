@@ -47,9 +47,25 @@ const  getStudentCohort =  async (cohorte) => {
          });
 }
 
+const  getProgram =  async () => {
+    return await axios.get("programs", )
+    .then((res)=>{
+        const data=res.data;
+            var datos=[]
+            data.forEach(element => {
+                datos.push(
+                    {
+                        value: element.id, label:element.name 
+                    }
+                )
+            });
+            return datos
+         });
+}
 
 const  registerStudent =  async (data) => {
-    return await axios.post("/StudentMasiva", data.data)
+ console.log(data)
+    return await axios.post("/student", [data])
     .then((res)=>{
          });
 }
@@ -72,4 +88,4 @@ const getintereses= async () => {
         });
 }
 
-export default { getAllStudents, logout, registerAll, getintereses, offStudent, getStudentCohort }
+export default { getAllStudents, logout, registerAll, getintereses, offStudent, getStudentCohort, getProgram, registerStudent }
