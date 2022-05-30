@@ -1,5 +1,5 @@
 import React from "react";
-import {Footer, NavbarDashboard, SidebarDashboard, SidebarResponsive} from "../components/templates"
+import { Footer, NavbarDashboard, NavbarMobil, SidebarDashboard, SidebarResponsive } from "../components/templates"
 
 
 const PaginaAdmin = ({ children }) => {
@@ -10,12 +10,18 @@ const PaginaAdmin = ({ children }) => {
           <div className="hidden lg:block">
             <SidebarDashboard />
           </div>
-          <div className="lg:hidden w-max ">
+          <div className="hidden md:block lg:hidden w-max ">
             <SidebarResponsive />
           </div>
         </div>
         <div className="w-full flex flex-col justify-between h-screen  ">
-          <NavbarDashboard />
+          <div className="hidden md:block">
+            <NavbarDashboard />
+          </div>
+          <div className="md:hidden">
+            <NavbarMobil />
+          </div>
+
           <div className="overflow-scroll overflow-x-hidden">{children}</div>
           <div>
             <Footer />
