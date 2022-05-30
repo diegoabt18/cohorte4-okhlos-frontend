@@ -5,10 +5,6 @@ import {utils, writeFile} from "xlsx";
 
 const Table = ({ data }) => {
 
-    console.log(data)
-
-    
-
     return (
         <div className="font-GilroyLight h-[60vh] ">
 

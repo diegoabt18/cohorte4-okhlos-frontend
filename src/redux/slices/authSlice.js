@@ -10,7 +10,6 @@ const initialState = {
 export const login = createAsyncThunk(
     'counter/loginStatus',
     async (data) => {
-        console.log(data)
         return authServices.login(data.username, data.password)
     }
 );
@@ -42,7 +41,7 @@ export const authSlice = createSlice({
         // Add reducers for additional action types here, and handle loading state as needed
         builder.addCase(login.fulfilled, (state, action) => {
           // Add user to the state array
-          console.log(action.payload)
+          
           const decode=jwtDecode(action.payload.accesToken)
           state.user=decode
         })

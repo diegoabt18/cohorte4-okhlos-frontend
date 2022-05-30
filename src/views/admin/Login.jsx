@@ -22,14 +22,12 @@ const Login = () => {
 
     function click() {
         dispatch(login(datos))
-        console.log(datos, count)
-
-    }
+        }
 
     async function logii(){
         const dat = await axios.post('http://127.0.0.1:8000/login/',datos).then(
             res=>{
-                console.log(res.data)
+            
             }
         ) 
     }

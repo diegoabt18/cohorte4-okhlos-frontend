@@ -23,7 +23,6 @@ const Login = () => {
     }
 
     function click() {
-        console.log(data)
         dispatch(login(data))
         setLoad(true)
         setTimeout(() => {

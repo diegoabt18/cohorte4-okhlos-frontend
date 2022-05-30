@@ -16,15 +16,13 @@ const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
         data = useSelector(selectDataMentorApi);
     }
 
-
-
     function exportFile() {
-        console.log("Si entre pues")
+        
         if (filter.file) {
             /* convert state to workbook */
 
             const file = data.columnas.concat(Object.values(filter.data))
-            console.log(file)
+            
             const ws = utils.aoa_to_sheet(file);
             const wb = utils.book_new();
             utils.book_append_sheet(wb, ws, "SheetJS");

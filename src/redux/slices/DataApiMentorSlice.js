@@ -42,15 +42,8 @@ export const DataApiMentorSlice = createSlice({
         // Add reducers for additional action types here, and handle loading state as needed
         builder.addCase(getAllMentor.fulfilled, (state, action) => {
             // Add user to the state array
-                
-                console.log(action.payload)
                 const columnas = Object.keys(action.payload[0])
-                console.log(columnas)
-                console.log("qpaso mijin", action.payload)
                 const result = action.payload.map(e => Object.values(e))
-                console.log(result)
-               
-                
                 state.data= result
                 state.columnas=[columnas]
                 state.file=true

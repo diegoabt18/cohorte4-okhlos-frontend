@@ -9,7 +9,6 @@ const BasicComboBox = () => {
     useEffect(() => {
         const data = matchServices.getPrograms()
         data.then(respuesta => {
-            console.log(respuesta)
             setCohorte(respuesta)
         })
 

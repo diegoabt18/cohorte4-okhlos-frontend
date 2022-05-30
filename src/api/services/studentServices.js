@@ -2,11 +2,9 @@ import axios from '../axios.js'
 
 
 const getAllStudents = async () => {
-    //console.log(username, password)
     return await axios
         .get("user/student")
         .then((response) => {
-            console.log(response.data)
             if (response.data.length) {
                 return response.data;
             }else{
@@ -23,9 +21,33 @@ const logout = () => {
 const  registerAll =  async (data) => {
     return await axios.post("/StudentMasiva", data.data)
     .then((res)=>{
-        console.log(res)
     });
 }
 
+const  registerStudent =  async (data) => {
+    return await axios.post("/StudentMasiva", data.data)
+    .then((res)=>{
+         });
+}
 
-export default { getAllStudents, logout, registerAll }
+const getintereses= async () => {
+     return await axios
+        .get("interests")
+        .then((response) => {
+            
+            const data=response.data;
+            console.log(data)
+            var datos=[]
+            data.forEach(element => {
+                datos.push(
+                    {
+                        value: element.id, label:element.name 
+                    }
+                )
+            });
+            console.log(datos)
+            return datos
+        });
+}
+
+export default { getAllStudents, logout, registerAll, getintereses }

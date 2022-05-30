@@ -2,7 +2,7 @@ import axios from '../axios.js'
 
 
 const getPrograms = async () => {
-    //console.log(username, password)
+    
     return await axios
         .get("cohorte")
         .then((response) => {
@@ -16,8 +16,7 @@ const getPrograms = async () => {
                     }
                 )
             });
-            console.log(datos)
-            return datos
+                return datos
         });
 }
 

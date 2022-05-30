@@ -9,8 +9,7 @@ import {TitlePage} from '../atoms'
 const PlantillaMentor = () => {
 
     const data = useSelector(selectDataMentorExcel);
-    console.log(data)
-
+    
     const [filter, setFilter]=useState(data);
 
   return (

@@ -23,7 +23,7 @@ export default class TableNOBORRAR extends React.Component {
       /* Get first worksheet */
       const wsname = wb.SheetNames[0];
       const ws = wb.Sheets[wsname];
-      console.log(rABS, wb);
+      
       /* Convert array of arrays */
       const data = utils.sheet_to_json(ws, { header: 1 });
       /* Update state */

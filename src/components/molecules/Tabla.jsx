@@ -15,9 +15,7 @@ const Tabla = () => {
         const target = event.target
         const value = target.type === 'checkbox' ? target.checked : target.value
         const name = target.name
-        console.log(target)
-        console.log(value)
-        console.log(name)
+        
 
         if (name === 'file') {
           let reader = new FileReader()
@@ -33,7 +31,6 @@ const Tabla = () => {
             const columnas= allData.slice(0,1)
             const data=allData.slice(1)
             const codeColumnas=make_cols(ws["!ref"])
-            console.log(data, columnas)
             setDataExcel({
                 ...dataExcel,
                 data:data,
@@ -46,8 +43,7 @@ const Tabla = () => {
       } 
 
       function imprimir(){
-          console.log(dataExcel)
-      }
+        }
 
       function make_cols(refstr) {
         let o = [],

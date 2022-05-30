@@ -4,7 +4,7 @@ import {ButtonTable} from '../atoms'
 
 
 const BasicTable = ({ datos }) => {
-    console.log(datos.data)
+    
     
     return (
       <div className="font-GilroyLight h-[60vh] ">

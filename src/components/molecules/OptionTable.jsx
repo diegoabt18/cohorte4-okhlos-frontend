@@ -28,7 +28,6 @@ const OptionTable = ({filter, setFilter, load}) => {
             const namefile=filter.name+".xlsx";
             writeFile(wb, namefile);
         }else{
-            console.log("q paso");
             ModalAlert("Error al descargar archivo","No se encontraron datos para descargar","error")
         }
 

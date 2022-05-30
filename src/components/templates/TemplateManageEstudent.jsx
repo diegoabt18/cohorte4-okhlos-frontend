@@ -16,9 +16,7 @@ const templateManageEstudent = () => {
 
     const dataApi = useSelector(selectDataEstudentApi)
     const [filter, setFilter]=useState(dataApi);
-    console.log(filter.data.length)
-
-
+    
     return (
         <div className='grid'>
             <div className='pt-6 pb-4 px-4 font-Roboto font-bold'>
