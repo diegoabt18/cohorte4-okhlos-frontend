@@ -3,12 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllStudent, selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
 import {OptionTableAdmin, PageOptionsTitle} from '../molecules';
 import {BasicTable, NewStudent} from '../organisms';
+import studentServices from '../../api/services/studentServices';
 
 const templateManageEstudent = () => {
-    //Llenar tabla con datos de la bases de datos
-    //Peticion axios para permitirme filtrar por palabra
-    //
-
+    
     useEffect(() => {
         dispatch(getAllStudent());
     }, [])
@@ -28,7 +26,7 @@ const templateManageEstudent = () => {
             </div>
             <br />
             <div className='overflow-scroll'>
-                 <BasicTable datos={filter.data.length? filter:dataApi}  /> 
+                 <BasicTable datos={filter.data.length? filter:dataApi} func={studentServices.offStudent}  /> 
             </div>
 
         </div>

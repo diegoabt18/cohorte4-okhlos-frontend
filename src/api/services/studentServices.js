@@ -1,3 +1,4 @@
+import ModalAlert from '../../components/atoms/ModalAlert.js';
 import axios from '../axios.js'
 
 
@@ -16,13 +17,27 @@ const getAllStudents = async () => {
 const logout = () => {
     localStorage.removeItem("user");
 }
-
-
 const  registerAll =  async (data) => {
     return await axios.post("/StudentMasiva", data.data)
     .then((res)=>{
     });
 }
+
+const offStudent = async (id) => {
+    console.log(id)
+    console.log("wwwwwwwwwwwwwwww")
+    return await axios.put(`studentOff/${id}`)
+    .then((res)=>{
+        if (res.status == 200){
+            location.reload()
+        } else {
+            ModalAlert("Error Al Desactivar Estudiante", "Favor verificar!", "error")
+        }
+    }
+
+)
+}
+
 
 const  registerStudent =  async (data) => {
     return await axios.post("/StudentMasiva", data.data)
@@ -50,4 +65,4 @@ const getintereses= async () => {
         });
 }
 
-export default { getAllStudents, logout, registerAll, getintereses }
+export default { getAllStudents, logout, registerAll, getintereses, offStudent }
