@@ -3,6 +3,7 @@ import axios from '../axios.js'
 import jwtDecode from 'jwt-decode'
 
 
+
 const login = async (username, password) => {
     
     const data = {
@@ -12,11 +13,11 @@ const login = async (username, password) => {
     return await axios
         .post("login2/", data)
         .then((response) => {
-
-            
+            console.log(response.status)
             if (response.data.accesToken) {
                 localStorage.setItem("user", JSON.stringify(response.data.accesToken));
             }
+
             return response.data;
         });
        
