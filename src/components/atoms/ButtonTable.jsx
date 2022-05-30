@@ -2,7 +2,6 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 
 const ButtonTable = ({ icon, color, func, id }) => {
-  console.log(id)
   return (
     <button
       type="button" onClick = {() => func(id)}

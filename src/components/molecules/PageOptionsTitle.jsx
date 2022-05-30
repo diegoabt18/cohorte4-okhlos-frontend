@@ -6,8 +6,6 @@ const PageOptionsTitle = ({text}) => {
         <div className='flex justify-between'>
             <TitlePage text={text} />
             <div>
-                <ButtonEscuela />
-                <ButtonEscuela />
             </div>
 
 

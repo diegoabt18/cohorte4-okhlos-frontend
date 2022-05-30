@@ -7,6 +7,7 @@ const getAllStudents = async () => {
         .get("user/student")
         .then((response) => {
             if (response.data.length) {
+                console.log(response.data)
                 return response.data;
             }else{
                 return []
@@ -24,8 +25,7 @@ const  registerAll =  async (data) => {
 }
 
 const offStudent = async (id) => {
-    console.log(id)
-    console.log("wwwwwwwwwwwwwwww")
+    
     return await axios.put(`studentOff/${id}`)
     .then((res)=>{
         if (res.status == 200){
@@ -36,6 +36,15 @@ const offStudent = async (id) => {
     }
 
 )
+}
+const  getStudentCohort =  async (cohorte) => {
+ 
+    return await axios.get(`students/cohort/${cohorte}` )
+    .then((res)=>{
+        const result = res.data.map((e) => Object.values(e));
+        console.log(result)
+        return result
+         });
 }
 
 
@@ -51,7 +60,6 @@ const getintereses= async () => {
         .then((response) => {
             
             const data=response.data;
-            console.log(data)
             var datos=[]
             data.forEach(element => {
                 datos.push(
@@ -60,9 +68,8 @@ const getintereses= async () => {
                     }
                 )
             });
-            console.log(datos)
             return datos
         });
 }
 
-export default { getAllStudents, logout, registerAll, getintereses, offStudent }
+export default { getAllStudents, logout, registerAll, getintereses, offStudent, getStudentCohort }

@@ -7,7 +7,7 @@ import { Icon } from '@iconify/react';
 import {ModalAlert, Search, ButtonIconText,BasicComboBox} from '../atoms';
 
 
-const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
+const OptionTableAdmin = ({ filter, setFilter, load, text, func }) => {
     var data = "";
 
     if (load == "student") {
@@ -41,7 +41,7 @@ const OptionTableAdmin = ({ filter, setFilter, load, text }) => {
                 <Search datos={data} setFilter={setFilter} />
             </div>
             <div className='flex gap-2'>
-                <BasicComboBox />
+                <BasicComboBox func={func} data={data} load={load} />
                 <label htmlFor="my-modal-3" className="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor5 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
                     <div className='flex gap-2 items-center'>
                         <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> {text}
