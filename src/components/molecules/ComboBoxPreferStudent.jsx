@@ -4,7 +4,7 @@ import {MultiComboBox} from '../atoms'
 const ComboBoxPreferStudent = ({text}) => {
     return (
         <div >
-            <MultiComboBox text={'Intereses'}/>    
+            <MultiComboBox text={text}/>    
         </div>
     )
 }
