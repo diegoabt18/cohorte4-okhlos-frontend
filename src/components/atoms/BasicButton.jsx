@@ -12,7 +12,7 @@ const BasicButton = ({text, func}) => {
             py-2 
             px-4 
             rounded"
-
+            type='buttom'
             onClick={func}
         >
             {text}
