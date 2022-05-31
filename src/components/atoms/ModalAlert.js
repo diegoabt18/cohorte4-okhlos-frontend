@@ -4,7 +4,7 @@ import Swal from 'sweetalert'
     Swal(
         title,
         text,
-        icon
+        icon //success error warning
     )
 }
 

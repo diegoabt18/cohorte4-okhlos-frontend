@@ -4,9 +4,11 @@ import makeAnimated from 'react-select/animated';
 import studentServices from '../../api/services/studentServices';
 
 
+
 const animatedComponents = makeAnimated();
 
 const MultiComboBox = ({text, setFunc, state}) => {
+
     const options = [
         { value: 'react', label: 'React' },
         { value: 'javascript', label: 'JavaScript' },
@@ -31,6 +33,7 @@ const MultiComboBox = ({text, setFunc, state}) => {
                {text}
             </span>
             <Select
+                required
                 closeMenuOnSelect={false}
                 components={animatedComponents}
                 isMulti

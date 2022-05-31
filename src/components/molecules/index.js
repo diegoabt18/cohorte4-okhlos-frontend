@@ -17,6 +17,8 @@ export {default as OptionTableAdmin} from './OptionTableAdmin';
 export {default as FooterModal} from './FooterModal';
 export {default as IconMenuResponsive} from './IconMenuResponsive'
 export {default as DataMentor} from './DataMentor';
+export {default as ModalUpdate} from './ModalUpdate';
+export {default as DataStudentUpdate} from './DataStudentUpdate';
 
 
 
