@@ -2,8 +2,11 @@ import React, { useState, useEffect } from "react";
 import studentServices from "../../api/services/studentServices";
 import { InputNombre, BasicComboForm, BasicButton, ModalAlert } from "../atoms";
 import { ComboBoxPreferStudent } from "./";
+import { useDispatch } from "react-redux";
+import { getAllStudent } from "../../redux/slices/DataApiEstudentSlice";
 
-const DataStudent = () => {
+const DataStudent = ({ setOpen }) => {
+    const dispatch =useDispatch()
     const [program, setprogram] = useState([]);
     const [multiOption, setMultiopcion] = useState([]);
     const [DataForm, setDataForm] = useState({
@@ -23,43 +26,52 @@ const DataStudent = () => {
 
     function selectOption(event) {
         setDataForm({
-        ...DataForm,
-        gender: event.value,
+            ...DataForm,
+            gender: event.value,
         });
     }
 
     function selectOptionProgram(event) {
         console.log(event)
         setDataForm({
-        ...DataForm,
-        program: event.label,
+            ...DataForm,
+            program: event.label,
         });
     }
 
 
     function submmit() {
         const form = [
-        DataForm.name,
-        DataForm.email,
-        parseInt(DataForm.cohorte),
-        parseInt(DataForm.age),
-        parseInt(DataForm.phone),
-        DataForm.status,
-        DataForm.gender,
-        DataForm.program,
-        parseInt(multiOption[1].value),
-        parseInt(multiOption[0].value),
+            DataForm.name,
+            DataForm.email,
+            parseInt(DataForm.cohorte),
+            parseInt(DataForm.age),
+            parseInt(DataForm.phone),
+            DataForm.status,
+            DataForm.gender,
+            DataForm.program,
+            parseInt(multiOption[1].value),
+            parseInt(multiOption[0].value),
         ];
-        studentServices.registerStudent(form);
-        setTimeout(() => {
-        ModalAlert("Ok", "Registro Estudiante Efectuado", "success")
-        }, 2000)
+        const response = studentServices.registerStudent(form);
+        response.then((res) => {
+            if (res.status == 200) {
+                setOpen(false)
+                dispatch(getAllStudent())
+                setTimeout(() => {
+                    ModalAlert("Ok", "Registro Estudiante Efectuado", "success")
+                }, 1000)
+            }else{
+                ModalAlert("Error", "Registro Estudiante Fallo", "error")
+            }
+        })
+
     }
 
     const handleInputChange = (event) => {
         setDataForm({
-        ...DataForm,
-        [event.target.name]: event.target.value,
+            ...DataForm,
+            [event.target.name]: event.target.value,
         });
     };
     const options = [
@@ -71,7 +83,7 @@ const DataStudent = () => {
     useEffect(() => {
         const programa = studentServices.getProgram();
         programa.then((res) => {
-        setprogram(res);
+            setprogram(res);
         });
     }, []);
 
@@ -107,13 +119,13 @@ const DataStudent = () => {
                 </div>
 
                 <div>
-                <InputNombre
-                    func={handleInputChange}
-                    text={"Edad"}
-                    name={"age"}
-                    type={"number"}
-                    placeholder={"Ingresa tu Edad"}
-                />
+                    <InputNombre
+                        func={handleInputChange}
+                        text={"Edad"}
+                        name={"age"}
+                        type={"number"}
+                        placeholder={"Ingresa tu Edad"}
+                    />
                 </div>
                 <div>
                     <InputNombre
@@ -141,7 +153,7 @@ const DataStudent = () => {
                         Seleccionar el tema de mayor interes, luego el de menor interes.
                     </p>
                 </div>
-            <div>
+                <div>
                     <BasicComboForm
                         func={selectOptionProgram}
                         text={"Programa"}
@@ -149,7 +161,7 @@ const DataStudent = () => {
                     />
                 </div>
             </div>
-            
+
             <div className="flex justify-end w-full ">
                 <BasicButton func={submmit} text={"Submit"} />
             </div>

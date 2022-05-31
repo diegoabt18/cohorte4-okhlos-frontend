@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllStudent, selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
-import {OptionTableAdmin, PageOptionsTitle, ModalUpdate, DataStudentUpdate} from '../molecules';
+import {OptionTableAdmin, PageOptionsTitle, ModalUpdate, DataStudentUpdate, DataStudent} from '../molecules';
 import {BasicTable, NewStudent} from '../organisms';
 import studentServices from '../../api/services/studentServices';
 
@@ -15,6 +15,7 @@ const templateManageEstudent = () => {
     const dataApi = useSelector(selectDataEstudentApi)
     const [filter, setFilter]=useState(dataApi);
     const [open, setOpen]=useState(false);
+    const [openNew, setOpenNew]=useState(false);
     const [DataForm, setDataForm] = useState({
         id:null,
         name: "",
@@ -35,12 +36,15 @@ const templateManageEstudent = () => {
             <div className='pt-6 pb-4 px-4 font-Roboto font-bold text-center'>
                 <PageOptionsTitle text={"Administrar Estudiantes"} className='text-center' />
                 <NewStudent />
+                <ModalUpdate state={openNew} setState={setOpenNew} >
+                    <DataStudent setOpen={setOpenNew} />
+                </ModalUpdate>
                 <ModalUpdate state={open} setState={setOpen} >
                     <DataStudentUpdate DataForm={DataForm} setDataForm={setDataForm} setOpen={setOpen}/>
                 </ModalUpdate>
             </div>
             <div className='px-2'>
-                <OptionTableAdmin  func={studentServices.getStudentCohort} filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"student"}  text={'Agregar Estudiante'}/>
+                <OptionTableAdmin setOpen={setOpenNew} func={studentServices.getStudentCohort} filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"student"}  text={'Agregar Estudiante'}/>
             </div>
             <br />
             <div className='overflow-scroll'>
