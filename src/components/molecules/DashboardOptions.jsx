@@ -3,7 +3,7 @@ import { BasicButton, TextInfoDashBoard } from '../atoms'
 
 const DashboardOptions = () => {
   return (
-    <div className='grid grid-cols-2 p-4 '>
+    <div className='grid grid-cols-2 p-4  sm:flex sm:flex-cols '>
       <div >
         <TextInfoDashBoard />
 

@@ -4,7 +4,7 @@ import { CardsInfoGeneral, ImgFase2, Welcome } from '../components/organisms/Ind
 
 const Dashboard = () => {
     return (
-        <div>
+        <div >
             <Welcome />
             <CardsInfoGeneral />
             <div className=' '>
