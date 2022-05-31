@@ -67,6 +67,7 @@ const registerStudent = async (data) => {
     console.log(data)
     return await axios.post("/student", [data])
         .then((res) => {
+            return res
         });
 }
 
