@@ -9,7 +9,6 @@ const Dashboard = () => {
             <div className=' '>
                 <ImgFase2 />
             </div>
-
         </div>
     )
 }

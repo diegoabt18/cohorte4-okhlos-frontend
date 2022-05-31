@@ -4,19 +4,30 @@ import matchServices from "../../api/services/matchServices";
 
 const MatchTableOptions = () => {
 
- 
-
-  return (
-    <div className="grid grid-cols-2 justify-between">
-      <div className="w-full z-20">
-        <BasicComboBox/>
-      </div>
-      <div className="flex justify-end ">
-        <ButtonIconText text={"Realizar Match"} icon={"ic:baseline-group-add"} />
-        <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} />
-      </div>
-    </div>
-  );
+    return (
+        <div className="
+            flex
+            flex-col
+            items-center
+            justify-center
+            gap-5
+            pt-5
+            md:flex-row
+            md:justify-between
+        ">
+            <div className="">
+                <BasicComboBox/>
+            </div>
+            <div className="
+                flex-col
+                gap-3
+                md:flex-row
+            ">
+                <ButtonIconText text={"Realizar Match"} icon={"ic:baseline-group-add"} />
+                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} />
+            </div>
+        </div>
+    );
 };
 
 export default MatchTableOptions;
