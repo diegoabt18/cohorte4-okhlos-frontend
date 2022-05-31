@@ -52,7 +52,7 @@ const DataStudent = () => {
     ];
     studentServices.registerStudent(form);
     setTimeout(() => {
-      ModalAlert("Ok", "Registro Estudiante Efectuado", "success")
+      ModalAlert("En proceso!", "Debes actualizar la pagina, recuerda que los datos duplicados anulan el proceso", "success")
     }, 2000)
   }
 
@@ -137,8 +137,8 @@ const DataStudent = () => {
             state={multiOption}
             text={"Preferencias"}
           />
-          <p className="font-GilroyLight font-semibold ">
-            Seleccionar el tema de mayor interes, luego el de menor interes.
+          <p className="font-GilroyLight font-semibold text-sm">
+            Seleccione el de mayor interes, luego el de menor interes.
           </p>
         </div>
         <div>
