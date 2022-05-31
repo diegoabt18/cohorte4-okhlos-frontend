@@ -97,4 +97,7 @@ const getintereses = async () => {
         });
 }
 
+
+
+
 export default { getAllStudents, logout, registerAll, getintereses, offStudent, getStudentCohort, getProgram, registerStudent, updateStudent }

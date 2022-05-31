@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllStudent, selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
 import {OptionTableAdmin, PageOptionsTitle, ModalUpdate, DataStudentUpdate, DataStudent} from '../molecules';
-import {BasicTable, NewStudent} from '../organisms';
+import {BasicTable } from '../organisms';
 import studentServices from '../../api/services/studentServices';
 
 const templateManageEstudent = () => {
@@ -29,14 +29,30 @@ const templateManageEstudent = () => {
         intmayor: null,
     });
 
+    function loadDataModal(data) {
+        console.log(data)
+        setDataForm({
+            ...DataForm,
+            id: data[0],
+            name: data[1],
+            email: data[2],
+            cohorte: data[3],
+            age: data[4],
+            phone: data[5],
+            status: data[6],
+            gender: data[7],
+            program: data[8],
+            intmenor: null,
+            intmayor: null,
+          })
+      }
     
     return (
         <div className='grid'>
             <div className='pt-6 pb-4 px-4 font-Roboto font-bold text-center'>
                 <PageOptionsTitle text={"Administrar Estudiantes"} className='text-center' />
-                <NewStudent />
                 <ModalUpdate state={openNew} setState={setOpenNew} >
-                    <DataStudent setOpen={setOpenNew} />
+                <DataStudent setOpen={setOpenNew} />
                 </ModalUpdate>
                 <ModalUpdate state={open} setState={setOpen} >
                     <DataStudentUpdate DataForm={DataForm} setDataForm={setDataForm} setOpen={setOpen}/>
@@ -47,7 +63,7 @@ const templateManageEstudent = () => {
             </div>
             <br />
             <div className='overflow-scroll'>
-                 <BasicTable setState={setOpen} DataForm={DataForm} setDataForm={setDataForm} datos={filter.data.length? filter:dataApi} func={studentServices.offStudent}  /> 
+                 <BasicTable setState={setOpen} loadDataModal={loadDataModal} datos={filter.data.length? filter:dataApi} func={studentServices.offStudent}  /> 
             </div>
         </div>
     )
