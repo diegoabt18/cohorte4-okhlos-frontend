@@ -1,13 +1,14 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 
-const XCloseBtn = () => {
+const XCloseBtn = ({ func }) => {
   return (
     <button
+      onClick={func}
       type="button"
-      className=" bg-transparent hover:bg-PrimarioColor1"
+      className=" bg-transparent "
     >
-      <Icon icon="bx:x" style={{color:'black', width:'25px', height:'25px' }}/>
+      <Icon icon="bx:x" className="hover:text-red-500" style={{ color: 'black', width: '25px', height: '25px' }} />
     </button>
   );
 

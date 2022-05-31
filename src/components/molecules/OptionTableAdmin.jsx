@@ -36,17 +36,33 @@ const OptionTableAdmin = ({ filter, setFilter, load, text, func }) => {
     }
 
     return (
-        <div className='flex justify-between items-center'>
+        <div className='
+            flex 
+            flex-col
+            justify-between 
+            items-center
+            gap-4
+            lg:flex-row
+        '>
             <div>
                 <Search datos={data} setFilter={setFilter} />
             </div>
-            <div className='flex gap-2'>
+            <div className='
+                flex
+                flex-col
+                gap-4
+                justify-center
+                align-middle
+                items-center
+                sm:flex-row
+            
+            '>
                 <BasicComboBox func={func} data={data} load={load} />
                 <label htmlFor="my-modal-3" className="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor5 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
                     <div className='flex gap-2 items-center'>
                         <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> {text}
                     </div>
-                    
+        
                 </label>
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
             </div>

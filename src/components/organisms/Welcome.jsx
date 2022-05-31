@@ -3,7 +3,7 @@ import {BienvenidaOkhlos, DashboardOptions} from '../molecules'
 
 const Welcome = () => {
   return (
-    <div>
+    <div className=''>
         <DashboardOptions/>
         <BienvenidaOkhlos/>
     </div>

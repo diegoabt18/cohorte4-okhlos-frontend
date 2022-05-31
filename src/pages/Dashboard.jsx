@@ -3,13 +3,12 @@ import {CardsInfoGeneral, ImgFase2, Welcome} from '../components/organisms'
 
 const Dashboard = () => {
     return (
-        <div>
+        <div >
             <Welcome />
             <CardsInfoGeneral />
             <div className=' '>
                 <ImgFase2 />
             </div>
-
         </div>
     )
 }

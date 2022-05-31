@@ -39,11 +39,30 @@ const OptionTable = ({filter, setFilter, load}) => {
     }
 
     return (
-        <div className='flex justify-between items-center'>
+        <div className='flex
+        flex-col
+        gap-4
+        justify-center 
+        items-center
+        w-full
+        md:flex-row
+        md:justify-around
+        '>
             <div>
                 <Search datos={data} setFilter={setFilter}/>
             </div>
-            <div className='flex'>
+            <div className='
+                flex
+                flex-col
+                gap-4
+                justify-center 
+                items-center
+                w-full
+                sm:flex-row
+                md:justify-end
+                
+                  
+            '>
                 <ButtonLoadDataBasicExcel load={load} />
                 <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData}/>
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile}/>
