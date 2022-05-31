@@ -59,15 +59,9 @@ const OptionTableAdmin = ({ filter, setFilter, load, text, func, setOpen }) => {
                 align-middle
                 items-center
                 sm:flex-row
-            
             '>
-                <BasicComboBox func={func} data={data} load={load} />
-                {/*<label htmlFor="my-modal-3" className="btn hover:bg-PrimarioColor1 hover:text-PrimarioColor5 bg-PrimarioColor2 modal-button text-[1rem] border-none font-bold capitalize font-Roboto text-black pt-5 pb-10">
-                    <div className='flex gap-2 items-center'>
-                        <Icon icon={"bi:person-plus"} className='text-[1.2rem] font-bold ' /> {text}
-                    </div>
-        
-    </label>*/}
+                
+                {load== "student"? <BasicComboBox func={func} data={data} load={load} /> :''  }
                 <ButtonIconText text={text} icon={"bi:person-plus"} func={openModal} />
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
             </div>

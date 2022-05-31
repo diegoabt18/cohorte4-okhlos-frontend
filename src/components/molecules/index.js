@@ -19,6 +19,7 @@ export {default as IconMenuResponsive} from './IconMenuResponsive'
 export {default as DataMentor} from './DataMentor';
 export {default as ModalUpdate} from './ModalUpdate';
 export {default as DataStudentUpdate} from './DataStudentUpdate';
+export {default as DataMentorUpdate} from './DataMentorUpdate';
 
 
 
