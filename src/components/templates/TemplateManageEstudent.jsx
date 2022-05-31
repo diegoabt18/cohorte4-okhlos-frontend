@@ -6,7 +6,6 @@ import {BasicTable, NewStudent} from '../organisms';
 import studentServices from '../../api/services/studentServices';
 
 const templateManageEstudent = () => {
-    
     useEffect(() => {
         dispatch(getAllStudent());
     }, [])
@@ -46,7 +45,6 @@ const templateManageEstudent = () => {
             <div className='overflow-scroll'>
                  <BasicTable setState={setOpen} DataForm={DataForm} setDataForm={setDataForm} datos={filter.data.length? filter:dataApi} func={studentServices.offStudent}  /> 
             </div>
-
         </div>
     )
 }
