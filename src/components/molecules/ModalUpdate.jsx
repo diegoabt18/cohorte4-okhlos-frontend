@@ -28,7 +28,6 @@ const ModalUpdate = ({ state, setState, children }) => {
 
     return (
         <div className=''>
-            <button onClick={openModal}>Open Modal</button>
             <Modal
                 isOpen={state}
                 onRequestClose={closeModal}
