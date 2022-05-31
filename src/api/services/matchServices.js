@@ -2,7 +2,7 @@ import axios from '../axios.js'
 
 
 const getPrograms = async () => {
-    //console.log(username, password)
+    
     return await axios
         .get("cohorte")
         .then((response) => {
@@ -10,14 +10,22 @@ const getPrograms = async () => {
             const data=response.data;
             var datos=[]
             data.forEach(element => {
-                datos.push(
+                if (element.cohort == 0 ){
+                    datos.push(
+                        {
+                            value: element.cohort, label: 'Proyectate' 
+                        }
+                    )
+                }else{
+                    datos.push(
                     {
-                        value: element.cohort, label: 'cohorte '+element.cohort 
+                        value: element.cohort, label: 'Programate Cohorte '+element.cohort 
                     }
-                )
+                )}
+
+                
             });
-            console.log(datos)
-            return datos
+                return datos
         });
 }
 

@@ -1,6 +1,6 @@
 import React from 'react'
-import { AdminWithName } from '../molecules'
-import { LogoMenuSidebar, PhotoProfile } from '../atoms'
+import {AdminWithName} from '../molecules'
+import {LogoMenuSidebar, PhotoProfile} from '../atoms'
 
 const MenuCabeceraDesktop = () => {
   return (
@@ -14,11 +14,7 @@ const MenuCabeceraDesktop = () => {
         <AdminWithName />
       </div>
 
-
     </div>
-
-
-
 
   )
 }

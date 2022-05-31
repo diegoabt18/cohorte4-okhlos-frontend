@@ -1,5 +1,5 @@
 import React from 'react'
-import { IconResponsiveCabecera, PhotoProfile } from '../atoms'
+import {IconResponsiveCabecera, PhotoProfile} from '../atoms'
 
 const MenuResponsiveCabecera = () => {
   return (

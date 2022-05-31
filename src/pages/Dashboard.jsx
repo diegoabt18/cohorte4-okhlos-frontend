@@ -1,6 +1,5 @@
 import React from 'react'
-import { CardsInfoGeneral, ImgFase2, Welcome } from '../components/organisms/Index'
-
+import {CardsInfoGeneral, ImgFase2, Welcome} from '../components/organisms'
 
 const Dashboard = () => {
     return (

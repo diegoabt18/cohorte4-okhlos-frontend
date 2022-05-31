@@ -1,7 +1,7 @@
 import React from "react";
-import { OnlyItemMenu, ItemMenu } from "../molecules";
-import { IconMenu } from "../atoms";
 import { NavLink } from "react-router-dom";
+import {OnlyItemMenu, ItemMenu} from "../molecules";
+import {IconMenu} from "../atoms";
 
 const MenuDesktop = () => {
   return (

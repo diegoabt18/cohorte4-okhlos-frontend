@@ -1,5 +1,5 @@
 import React from 'react'
-import { ImgBienvenidaAdmin, TextBienvenidaDashboard, } from '../atoms'
+import {ImgBienvenidaAdmin, TextBienvenidaDashboard} from '../atoms'
 
 const BienvenidaOkhlos = () => {
   return (

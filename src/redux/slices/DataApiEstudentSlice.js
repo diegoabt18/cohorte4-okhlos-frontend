@@ -43,18 +43,15 @@ export const DataApiEstudentSlice = createSlice({
         builder.addCase(getAllStudent.fulfilled, (state, action) => {
             // Add user to the state array
                 
-                console.log(action.payload)
-                const columnas = Object.keys(action.payload[0])
-                console.log(columnas)
-                console.log("qpaso mijin", action.payload)
-                const result = action.payload.map(e => Object.values(e))
-                console.log(result)
                
-                
-                state.data= result.slice(1)
-                state.columnas=[columnas]
-                state.file=true
-                state.name="Lstado estudiantes"
+                const columnas = Object.keys(action.payload[0]);
+
+                const result = action.payload.map((e) => Object.values(e));
+
+                state.data = result.slice(1);
+                state.columnas = [columnas];
+                state.file = true;
+                state.name = "Lstado estudiantes";
          
         })
     },

@@ -38,5 +38,6 @@ export {default as ImgConstruccion} from "./ImgConstruccion";
 export {default as Layout} from "./Layout";
 export {default as RequireAuth} from "./RequireAuth";
 export {default as Unauthorized} from "./Unauthorized";
+export {default as BasicComboForm} from "./BasicComboForm";
 
 

@@ -1,7 +1,6 @@
 import React from 'react'
-import { InputDate, InputNombre } from '../atoms'
-import BasicComboForm from '../atoms/BasicComboForm'
-import ComboBoxPreferStudent from './ComboBoxPreferStudent'
+import {InputNombre, InputDate, BasicComboForm } from '../atoms'
+import {ComboBoxPreferStudent} from './'
 
 const DataMentor = () => {
 

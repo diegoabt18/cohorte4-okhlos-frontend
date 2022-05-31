@@ -1,5 +1,5 @@
 import React from 'react'
-import ContenedorPerfil from '../organisms/ContenedorPerfil'
+import {ContenedorPerfil} from '../organisms'
 
 
 const NavbarDashboard = () => {

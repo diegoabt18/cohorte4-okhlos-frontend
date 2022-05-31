@@ -1,16 +1,11 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import './App.css'
-import { ContainerLogin } from './components/organisms'
-import { PlantillaMatch } from './components/templates'
-import PaginaAdmin from './pages/PaginaAdmin'
-import EstudentPageLoad from './pages/EstudentPageLoad'
-import MentorPageLoad from './pages/MentorPageLoad'
-import ManageStudent from './pages/ManageStudent'
-import ManageMentor from './pages/ManageMentor'
-import Dashboard from './pages/Dashboard'
-import Sesiones from './pages/Sesiones'
-import { RequireAuth, Layout, Unauthorized } from './components/atoms'
+import ContainerLogin from './components/organisms/ContainerLogin'
+import {PlantillaMatch} from './components/templates'
+import {PaginaAdmin, EstudentPageLoad, MentorPageLoad, ManageStudent, ManageMentor, Dashboard, Sesiones} from './pages'
+import {RequireAuth, Layout,Unauthorized} from './components/atoms'
+
 
 function App() {
   const [count, setCount] = useState(0);

@@ -1,11 +1,11 @@
 import React from 'react'
-import { ButtonTable } from '../atoms'
 import { Icon } from '@iconify/react'
+import {ButtonTable} from '../atoms'
 
-const BasicTable = ({ datos }) => {
-    console.log(datos.data)
-    
-    return (
+const BasicTable = ({ datos, func }) => {
+
+
+  return (
       <div className="font-GilroyLight h-[60vh] ">
         <table className=" table table-zebra table-compact w-full ">
           <thead className=" font-Roboto">
@@ -50,9 +50,10 @@ const BasicTable = ({ datos }) => {
                       icon={"eva:edit-2-outline"}
                       color={"text-PrimarioColor2"}
                     />
-                    <ButtonTable
-                      icon={"fluent:delete-48-regular"}
-                      color={"text-red-500"}
+                    <ButtonTable func={func}
+                      id={r[0]}
+                      icon={"ic:baseline-person-off"}
+                      color={r[6] == 1?     "text-red-500" : "text-gray-500" }
                     />
                   </td>
                 </tr>

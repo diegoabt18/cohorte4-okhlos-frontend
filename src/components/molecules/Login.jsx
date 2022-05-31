@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
-import { Navigate, NavLink } from 'react-router-dom'
-import { BasicButton, BasicInputText, LinkForgetPassword, LogoColorLapiz, } from '../atoms'
 import { login } from "../../redux/slices/authSlice"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react'
+import {LogoColorLapiz, BasicButton, BasicInputText, LinkForgetPassword} from '../atoms'
+
 
 const Login = () => {
     const navigate = useNavigate()
@@ -23,7 +23,6 @@ const Login = () => {
     }
 
     function click() {
-        console.log(data)
         dispatch(login(data))
         setLoad(true)
         setTimeout(() => {

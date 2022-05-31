@@ -1,8 +1,6 @@
 import React from 'react'
-import { BasicButton, BasicButtonIcon } from '../atoms'
-
-import Perfil from '../molecules/Perfil'
-import UserLogin from '../molecules/UserLogin'
+import {BasicButton} from '../atoms'
+import {Perfil,UserLogin} from '../molecules'
 import authServices from '../../api/services/authServices'
 
 const ContenedorPerfil = () => {

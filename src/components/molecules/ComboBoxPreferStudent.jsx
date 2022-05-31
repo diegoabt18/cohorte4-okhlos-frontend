@@ -1,10 +1,10 @@
 import React from 'react'
-import {MultiComboBox,} from '../atoms'
+import {MultiComboBox} from '../atoms'
 
-const ComboBoxPreferStudent = ({text}) => {
+const ComboBoxPreferStudent = ({text, setFunc, state }) => {
     return (
         <div >
-            <MultiComboBox text={'Intereses'}/>    
+            <MultiComboBox text={text} setFunc={setFunc} state={state} />    
         </div>
     )
 }

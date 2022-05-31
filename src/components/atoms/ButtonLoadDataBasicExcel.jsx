@@ -36,7 +36,7 @@ const ButtonLoadDataExcel = ( {load} ) => {
                 const columnas = allData.slice(0, 1)
                 const data = allData.slice(1)
                 const codeColumnas = make_cols(ws["!ref"])
-                console.log(data, columnas)
+               
 
                 //Configuracion del payload para en enviar al redux
                 payload.data = data;
