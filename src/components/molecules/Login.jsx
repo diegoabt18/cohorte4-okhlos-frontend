@@ -3,7 +3,7 @@ import { login } from "../../redux/slices/authSlice"
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@iconify/react'
-import {LogoColorLapiz, BasicButton, BasicInputText, LinkForgetPassword} from '../atoms'
+import {LogoColorLapiz, BasicButton, BasicInputText} from '../atoms'
 
 
 const Login = () => {
@@ -51,8 +51,6 @@ const Login = () => {
                 : <BasicButton text={"Ingresar"} func={click} />
             }
 
-
-            <LinkForgetPassword />
         </div>
     )
 }
