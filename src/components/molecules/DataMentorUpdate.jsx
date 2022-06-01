@@ -6,25 +6,11 @@ import { getAllMentor } from '../../redux/slices/DataApiMentorSlice';
 import mentorServices from '../../api/services/mentorServices';
 
 
-const DataMentor = ({ setOpen }) => {
+const DataMentorUpdate = ({ DataForm, setDataForm, setOpen }) => {
     const [empresa, setEmpresa] = useState([]);
     const [cargo, setCargo] = useState([]);
     const [estudios, setEstudios] = useState([]);
     const [multiOption, setMultiopcion] = useState([]);
-    const [DataForm, setDataForm] = useState({
-        id:null,
-        name: "",
-        email: "",
-        age: null,
-        hijos:null, 
-        numstudents:null, 
-        phone: null,
-        status: 1,
-        gender: "",
-        idstudies:null, 
-        idbussiness:null, 
-        idcargo:null, 
-    }); 
     const dispatch=useDispatch();
 
     console.log(multiOption);
@@ -70,7 +56,6 @@ const DataMentor = ({ setOpen }) => {
     ];
 
     function submmit() {
-       console.log("actualizar")
         const form = [
             DataForm.name,
             DataForm.email,
@@ -86,17 +71,18 @@ const DataMentor = ({ setOpen }) => {
             parseInt(multiOption[1].value),
             parseInt(multiOption[0].value),
         ];
-        
+        console.log(form)
 
-        const response = mentorServices.registerMentor(form)
+        const response = mentorServices.updateMentor(DataForm.id, form)
         response.then(res => {
             if (res.status == 200) {
-                ModalAlert("Alta Ok ", "Nuevo mentor creado satisfactoriamente ", "success")
+                ModalAlert("Actualizacion Mentor Efectuado", "Se realizo satisfactoriamente una actualizacion", "success")
+                
                 setOpen(false)
-                dispatch(getAllMentor())
+                /*dispatch(getAllMentor())*/
             }
             else{
-                ModalAlert("Error", "Ocurrio un error en el alta del mentor", "error")
+                ModalAlert("Error al actualizar", "Ocurrio un error al intentar actualizar un mentor", "error")
             }
         })
 
@@ -241,5 +227,4 @@ const DataMentor = ({ setOpen }) => {
     )
 }
 
-
-export default DataMentor
+export default DataMentorUpdate

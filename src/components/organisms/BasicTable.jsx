@@ -2,9 +2,9 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 import { ButtonTable } from '../atoms'
 
-const BasicTable = ({ datos, func, setState, DataForm, setDataForm }) => {
+const BasicTable = ({ datos, func, setState, loadDataModal }) => {
 
-  function loadDataModal(data) {
+  /*function loadDataModal(data) {
     console.log(data)
     setDataForm({
       ...DataForm,
@@ -20,7 +20,7 @@ const BasicTable = ({ datos, func, setState, DataForm, setDataForm }) => {
       intmenor: null,
       intmayor: null,
     })
-  }
+  }*/
 
   return (
     <div className="font-GilroyLight h-[60vh] ">
