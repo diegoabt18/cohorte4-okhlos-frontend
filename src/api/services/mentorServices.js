@@ -5,7 +5,7 @@ const getAllMentor = async () => {
     return await axios
         .get("user/mentor")
         .then((response) => {
-console.log(response.data)
+            console.log(response.data)
             if (response.data.length) {
                 return response.data[0];
             } else {
@@ -19,10 +19,10 @@ const getEstudies = async () => {
         .get("studies")
         .then((response) => {
 
-        const data=response.data        
-            var datos=[]
+            const data = response.data
+            var datos = []
             data.forEach(element => {
-                    datos.push(
+                datos.push(
                     {
                         value: element.id, label: element.title
                     }
@@ -37,17 +37,17 @@ const getCargos = async () => {
         .get("cargo")
         .then((response) => {
 
-            const data=response.data        
-            var datos=[]
+            const data = response.data
+            var datos = []
             data.forEach(element => {
-                    datos.push(
+                datos.push(
                     {
                         value: element.id, label: element.name
                     }
                 )
             });
             return datos
-            
+
         });
 }
 
@@ -56,10 +56,10 @@ const getBusiness = async () => {
         .get("business")
         .then((response) => {
 
-            const data=response.data        
-            var datos=[]
+            const data = response.data
+            var datos = []
             data.forEach(element => {
-                    datos.push(
+                datos.push(
                     {
                         value: element.id, label: element.name
                     }
@@ -67,12 +67,13 @@ const getBusiness = async () => {
             });
             return datos
 
-            });
+        });
 }
 const registerMentor = async (data) => {
     console.log(data)
     return await axios.post("mentor", [data])
         .then((res) => {
+            console.log(res)
             return res
         });
 }
@@ -86,7 +87,7 @@ const updateMentor = async (id, data) => {
             return res
         });
 
-    }
+}
 
 
 const offMentor = async (id) => {
@@ -103,4 +104,12 @@ const offMentor = async (id) => {
         )
 }
 
-export default { getAllMentor, getEstudies, getCargos, getBusiness, offMentor, registerMentor, updateMentor }
+const registerAll = async (data) => {
+    console.log(data)
+    return await axios.post("MentorMasiva", data.data)
+        .then((res) => {
+            console.log(res)
+        });
+}
+
+export default { getAllMentor, registerAll, getEstudies, getCargos, getBusiness, offMentor, registerMentor, updateMentor }

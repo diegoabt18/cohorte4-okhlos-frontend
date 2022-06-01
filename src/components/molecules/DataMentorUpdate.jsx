@@ -77,6 +77,7 @@ const DataMentorUpdate = ({ DataForm, setDataForm, setOpen }) => {
         response.then(res => {
             if (res.status == 200) {
                 ModalAlert("Actualizacion Mentor Efectuado", "Se realizo satisfactoriamente una actualizacion", "success")
+                
                 setOpen(false)
                 /*dispatch(getAllMentor())*/
             }
