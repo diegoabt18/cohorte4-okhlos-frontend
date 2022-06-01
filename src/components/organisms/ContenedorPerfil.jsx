@@ -10,7 +10,7 @@ const ContenedorPerfil = () => {
     }
 
     return (
-        <div className='z-20'>
+        <div className='z-1'>
             <ul className="menu menu-horizontal bg-base-100  px-4  ">
                 <li tabIndex="0" >
                     <span className='px-6'><UserLogin /></span>

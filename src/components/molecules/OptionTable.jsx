@@ -1,7 +1,7 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
-import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
+import { useSelector, useDispatch  } from 'react-redux';
+import { resetDataEstudent, selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
+import { resetDataMentor, selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
 import { utils, writeFile } from 'xlsx';
 import studentServices from '../../api/services/studentServices'
 import mentorServices from '../../api/services/mentorServices';
@@ -17,6 +17,7 @@ const OptionTable = ({ filter, setFilter, load }) => {
         data = useSelector(selectDataMentorExcel);
     }
 
+const dispacth = useDispatch()
 
     function exportFile() {
         if (filter.file) {
@@ -37,11 +38,15 @@ const OptionTable = ({ filter, setFilter, load }) => {
     function insertData() {
         if (load == "student") {
             studentServices.registerAll(data)
+            dispacth(resetDataEstudent())
+            ModalAlert("Ok", "Carga enviada a DB", "success");
         } else {
             mentorServices.registerAll(data)
+            dispacth(resetDataMentor())
+            ModalAlert("Ok","Carga enviada a DB", "success");
         }
     }
-
+    
     return (
         <div className='flex
         flex-col
@@ -68,9 +73,9 @@ const OptionTable = ({ filter, setFilter, load }) => {
                   
             '>
                 <ButtonLoadDataBasicExcel load={load} />
-                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData} />
-                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />
-            </div>
+                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData}  />
+                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} /> 
+                            </div>
 
         </div>
     )

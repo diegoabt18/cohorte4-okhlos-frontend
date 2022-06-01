@@ -30,6 +30,7 @@ const Search = ({ datos, setFilter }) => {
         setFilter(data)
 
       } else {
+        if (datos.data.length){
         const filter = datos.data.filter(item => {
           if(typeof item === 'object'){
             item=Object.values(item)
@@ -41,13 +42,13 @@ const Search = ({ datos, setFilter }) => {
           else {
             return false
           }
-
+        
         })
         payload.data = filter
         setFilter(payload)
       }
+      }
     }
-
   }, [searchInput])
 
 

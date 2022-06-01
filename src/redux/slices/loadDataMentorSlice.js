@@ -23,9 +23,14 @@ export const loadDataMentorSlice = createSlice({
                 file: action.payload.file
            }
         },
-        resetDataMentor: () => {
+        resetDataMentor: (state) => {
             return {
-                initialState
+                ...state, 
+                data:[],
+                columnas: [],
+                codeColumnas:[],
+                name: "",
+                file: false 
             }
          },
     
