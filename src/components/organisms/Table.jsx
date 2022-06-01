@@ -9,7 +9,7 @@ const Table = ({ data }) => {
         <div className="font-GilroyLight h-[60vh] ">
 
             {data.file ?
-                <table className=" table table-zebra table-compact w-full ">
+                <table className="table-zebra table-compact w-full ">
                     <thead className=' font-Roboto'>
                         <tr className=' w-full'>
                             {data.file ?
@@ -18,7 +18,7 @@ const Table = ({ data }) => {
                                 ))
                                 : <th>No hay</th>}
 
-                            {data.file ? <th className='bg-PrimarioColor2 text-black font-extrabold'>acciones</th> : null}
+                            {/*  {data.file ? <th className='bg-PrimarioColor2 text-black font-extrabold'>acciones</th> : null}*/}
                         </tr>
                     </thead>
                     <tbody>
@@ -29,10 +29,10 @@ const Table = ({ data }) => {
                                     {data.columnas[0].map((c, index) => (
                                         <td key={index}>{r[index]}</td>
                                     ))}
-                                    <td className='flex gap-2'>
+                                    {/* <td className='flex gap-2'>
                                         <ButtonTable icon={"eva:edit-2-outline"} color={"text-PrimarioColor2"} />
                                         <ButtonTable icon={"fluent:delete-48-regular"} color={"text-red-500"} />
-                                    </td>
+                                    </td> */}
                                 </tr>
                             ))
 

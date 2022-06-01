@@ -23,10 +23,15 @@ export const loadDataEstudentSlice = createSlice({
                 file: action.payload.file
             }
         },
-        resetDataEstudent: () => {
+        resetDataEstudent: (state) => {
             return {
-                initialState
-            }
+                ...state,
+                data:[],
+                columnas: [],
+                codeColumnas:[],
+                name: "",
+                file: false 
+               }
         },
 
     },
