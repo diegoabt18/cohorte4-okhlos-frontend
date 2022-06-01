@@ -45,6 +45,7 @@ const dispacth = useDispatch()
             dispacth(resetDataMentor())
             ModalAlert("Ok","Carga enviada a DB", "success");
         }
+     
     }
     
     return (
@@ -74,7 +75,7 @@ const dispacth = useDispatch()
             '>
                 <ButtonLoadDataBasicExcel load={load} />
                 <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData}  />
-                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} /> 
+                {/* <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />  */}
                             </div>
 
         </div>
