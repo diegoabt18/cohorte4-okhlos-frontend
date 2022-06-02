@@ -18,10 +18,10 @@ const ImgFase2 = () => {
         
         '>
             <div className='justify-center flex'>
-                <img src={Images.imgform}  alt="FomulariosDiligenciados"/>
+                <img src={Images.imgform}  alt="FomulariosDiligenciados" style={{width: '100%'}}/>
             </div>
-            <div className='justify-center flex'>
-                <img src={Images.imginf}  alt="InformesDiligenciados"/>        
+            <div className='justify-center flex w-full'>
+                <img src={Images.imginf}  alt="InformesDiligenciados" style={{width: '100%'}}/>        
             </div>
         </div>  
     )
