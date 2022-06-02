@@ -27,16 +27,15 @@ const ModalUpdate = ({ state, setState, children }) => {
 
 
     return (
-        <div className='
-            flex
-        '>
+        <div className=''>
             <Modal
                 isOpen={state}
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
+                className=''
             >
-                <div className="bg-PrimarioColor2 rounded-xl p-2 flex justify-between">
+                <div className="bg-PrimarioColor2 rounded-xl p-2 flex justify-between ">
                     <div >
                         <h3 className=" font-Roboto text-lg font-bold">Actualizar Datos</h3>
                     </div>

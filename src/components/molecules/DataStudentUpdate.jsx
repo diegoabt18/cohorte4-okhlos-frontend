@@ -78,7 +78,8 @@ const DataStudentUpdate = ({ DataForm, setDataForm, setOpen }) => {
             <div className="
                 flex
                 flex-col
-        
+                h-100
+                overflow-scroll
             ">
                 <div>
                     <InputNombre
