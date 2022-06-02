@@ -21,17 +21,19 @@ const CardsInfoGeneral = () => {
     }, [])
     return (
         <div className="font-Roboto gap-5 p-3 text-center ">
-            <h2 className="text-[1.3rem]">Informe General: Programate</h2>
+            <h2 className="text-[1.3rem] font-bold text-center sm:text-left p-3">Informe General: Programate</h2>
             <div className="
-                flex
-                flex-col
+                grid
+                grid-cols
+                px-4
                 items-center
                 justify-center
-                gap-3
-                sm:grid 
+                w-full
+                gap-3 
                 sm:grid-cols-2 
-                sm:gap-6
-                md:grid-cols-4
+                md:gap-6
+                lg:grid-cols-4
+
             ">
                 <div >
                     <CardsInfo dato={estudiantes} text={"Estudiantes"} color={"bg-PrimarioColor1"} />

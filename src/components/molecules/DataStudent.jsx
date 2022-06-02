@@ -89,7 +89,13 @@ const DataStudent = ({ setOpen }) => {
 
     return (
         <div>
-            <div className="grid grid-cols-2 w-full gap-5 sm:grid-cols">
+            <div className="
+                grid
+                grid-col
+                gap-3
+                md:grid
+                md:grid-cols-2
+            ">
                 <div>
                     <InputNombre
                         func={handleInputChange}
@@ -162,7 +168,7 @@ const DataStudent = ({ setOpen }) => {
                 </div>
             </div>
 
-            <div className="flex justify-end w-full ">
+            <div className="flex justify-end w-full pt-5 ">
                 <BasicButton func={submmit} text={"Submit"} />
             </div>
         </div>

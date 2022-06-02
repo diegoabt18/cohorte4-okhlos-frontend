@@ -123,7 +123,7 @@ const DataMentor = ({ setOpen }) => {
     
     return (
         <form onSubmit={(event)=>event.preventDefault()}>
-            <div className="grid grid-cols-2 w-full gap-5 sm:grid-cols">
+            <div className="grid grid-cols w-full gap-5 sm:grid-col-2">
                 <div>
                     <InputNombre
                         func={handleInputChange}
