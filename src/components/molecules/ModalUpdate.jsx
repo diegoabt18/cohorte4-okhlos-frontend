@@ -38,7 +38,7 @@ const ModalUpdate = ({ state, setState, children }) => {
             >
                 <div className="bg-PrimarioColor2 rounded-xl p-2 flex justify-between">
                     <div >
-                        <h3 className="text-lg font-bold">Actualizar estudiante</h3>
+                        <h3 className=" font-Roboto text-lg font-bold">Actualizar Datos</h3>
                     </div>
                     <XCloseBtn func={closeModal}/>
                 </div>

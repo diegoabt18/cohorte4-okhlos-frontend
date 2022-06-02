@@ -1,43 +1,53 @@
 import React from 'react'
-import { useSelector } from 'react-redux';
-import { selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
-import { selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
+import { useSelector, useDispatch  } from 'react-redux';
+import { resetDataEstudent, selectDataEstudentExcel } from '../../redux/slices/loadDataEstudentSlice';
+import { resetDataMentor, selectDataMentorExcel } from '../../redux/slices/loadDataMentorSlice';
 import { utils, writeFile } from 'xlsx';
 import studentServices from '../../api/services/studentServices'
-import {ModalAlert, Search, ButtonIconText, ButtonLoadDataBasicExcel} from '../atoms';
+import mentorServices from '../../api/services/mentorServices';
+import { ModalAlert, Search, ButtonIconText, ButtonLoadDataBasicExcel } from '../atoms';
 
 
-const OptionTable = ({filter, setFilter, load}) => {
+const OptionTable = ({ filter, setFilter, load }) => {
     var data = "";
-    
-   if (load=="student"){
-       data=useSelector(selectDataEstudentExcel);
-   }else {
-    data=useSelector(selectDataMentorExcel);
-   }
 
+    if (load == "student") {
+        data = useSelector(selectDataEstudentExcel);
+    } else {
+        data = useSelector(selectDataMentorExcel);
+    }
+
+const dispacth = useDispatch()
 
     function exportFile() {
         if (filter.file) {
             /* convert state to workbook */
-            const file=data.columnas.concat(filter.data)
+            const file = data.columnas.concat(filter.data)
             const ws = utils.aoa_to_sheet(file);
             const wb = utils.book_new();
             utils.book_append_sheet(wb, ws, "SheetJS");
             /* generate XLSX file and send to client */
-            const namefile=filter.name+".xlsx";
+            const namefile = filter.name + ".xlsx";
             writeFile(wb, namefile);
-        }else{
-            ModalAlert("Error al descargar archivo","No se encontraron datos para descargar","error")
+        } else {
+            ModalAlert("Error al descargar archivo", "No se encontraron datos para descargar", "error")
         }
 
     }
 
-    function insertData(){
-       
-        studentServices.registerAll(data)
+    function insertData() {
+        if (load == "student") {
+            studentServices.registerAll(data)
+            dispacth(resetDataEstudent())
+            ModalAlert("Ok", "Carga enviada a DB", "success");
+        } else {
+            mentorServices.registerAll(data)
+            dispacth(resetDataMentor())
+            ModalAlert("Ok","Carga enviada a DB", "success");
+        }
+     
     }
-
+    
     return (
         <div className='flex
         flex-col
@@ -49,7 +59,7 @@ const OptionTable = ({filter, setFilter, load}) => {
         md:justify-around
         '>
             <div>
-                <Search datos={data} setFilter={setFilter}/>
+                <Search datos={data} setFilter={setFilter} />
             </div>
             <div className='
                 flex
@@ -64,9 +74,9 @@ const OptionTable = ({filter, setFilter, load}) => {
                   
             '>
                 <ButtonLoadDataBasicExcel load={load} />
-                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData}/>
-                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile}/>
-            </div>
+                <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData}  />
+                {/* <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} func={exportFile} />  */}
+                            </div>
 
         </div>
     )
