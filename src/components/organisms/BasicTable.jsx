@@ -4,24 +4,6 @@ import { ButtonTable } from '../atoms'
 
 const BasicTable = ({ datos, func, setState, loadDataModal }) => {
 
-  /*function loadDataModal(data) {
-    console.log(data)
-    setDataForm({
-      ...DataForm,
-      id: data[0],
-      name: data[1],
-      email: data[2],
-      cohorte: data[3],
-      age: data[4],
-      phone: data[5],
-      status: data[6],
-      gender: data[7],
-      program: data[8],
-      intmenor: null,
-      intmayor: null,
-    })
-  }*/
-
   return (
     <div className="font-GilroyLight h-[60vh] ">
       <table className="table-zebra table-compact w-full ">

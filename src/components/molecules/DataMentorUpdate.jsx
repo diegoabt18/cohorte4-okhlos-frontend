@@ -159,7 +159,7 @@ const DataMentorUpdate = ({ DataForm, setDataForm, setOpen }) => {
                         name={"numstudents"}
                         type={"number"}
                         value={DataForm.numstudents}
-                        placeholder={"Cuantas mentorias vas a realizar"}
+                        placeholder={"Asignar numero de estudiantes"}
                     />
                 </div>
                                              
