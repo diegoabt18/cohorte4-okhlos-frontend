@@ -27,7 +27,9 @@ const ModalUpdate = ({ state, setState, children }) => {
 
 
     return (
-        <div className=''>
+        <div className='
+            flex
+        '>
             <Modal
                 isOpen={state}
                 onRequestClose={closeModal}
