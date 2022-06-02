@@ -4,11 +4,11 @@ import { DataStudent } from "../molecules";
 
 const NewStudent = ({ text }) => {
     return (
-        <div>
+        <div className="">
             <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-            <div className="modal ">
-                <div className="modal-box h-[100%] w-screen flex flex-col justify-between overflow-hidden">
-                    <div >
+            <div className="modal  ">
+                <div className="modal-box max-h-full w-screen flex flex-col justify-between ">
+                    <div className="" >
                         <label
                         htmlFor="my-modal-3"
                         className="btn btn-sm btn-circle absolute right-6 top-8"

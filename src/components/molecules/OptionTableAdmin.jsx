@@ -56,8 +56,6 @@ const OptionTableAdmin = ({ filter, setFilter, load, text, func, setOpen }) => {
                 flex-col
                 gap-4
                 justify-center
-                align-middle
-                items-center
                 sm:flex-row
             '>
                 

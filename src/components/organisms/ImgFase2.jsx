@@ -5,18 +5,24 @@ import Images from "../../assets";
 const ImgFase2 = () => {
     return (
         <div className='
-            flex 
-            flex-col
-            justify-between 
-            px-4
-            py-3
+            grid 
+            grid-col
+            justify-center
+            align-middle
+            p-4
             gap-4
-            lg:flex-row
-            lg:justify-around
+            items-center
+            w-full
+            lg:grid-cols-2
+            lg:justify-center
         
         '>
-            <img src={Images.imgform}  alt="FomulariosDiligenciados"/>
-            <img src={Images.imginf}  alt="InformesDiligenciados"/>        
+            <div className='justify-center flex'>
+                <img src={Images.imgform}  alt="FomulariosDiligenciados"/>
+            </div>
+            <div className='justify-center flex'>
+                <img src={Images.imginf}  alt="InformesDiligenciados"/>        
+            </div>
         </div>  
     )
 }

@@ -19,9 +19,12 @@ const MatchTableOptions = () => {
                 <BasicComboBox/>
             </div>
             <div className="
+                flex
                 flex-col
                 gap-3
                 md:flex-row
+                md:justify-center
+                
             ">
                 <ButtonIconText text={"Realizar Match"} icon={"ic:baseline-group-add"} />
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"} />
