@@ -12,3 +12,4 @@ export {default as NewStudent} from './NewStudent';
 export {default as MenuResponsive} from "./MenuResponsive";
 export {default as MenuResponsiveCabecera} from "./MenuResponsiveCabecera";
 export {default as NewMentor} from './NewMentor'
+export {default as TableMatch} from './TableMatch'

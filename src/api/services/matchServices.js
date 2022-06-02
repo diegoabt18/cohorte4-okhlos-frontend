@@ -29,6 +29,12 @@ const getPrograms = async () => {
         });
 }
 
+const matchMasivo = async (data) => {
+    console.log(data)
+    return await axios.post("MatchMassive", data)
+        .then((res) => {
+        });
+}
 
 
 export default { getPrograms }
