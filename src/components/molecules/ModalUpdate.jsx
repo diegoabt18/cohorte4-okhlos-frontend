@@ -33,7 +33,7 @@ const ModalUpdate = ({ state, setState, children }) => {
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
-                className=''
+                className='h-[80%] overflow-scroll w-[85%] p-6 absolute bg-white rounded-lg lg:overflow-hidden'
             >
                 <div className="bg-PrimarioColor2 rounded-xl p-2 flex justify-between ">
                     <div >

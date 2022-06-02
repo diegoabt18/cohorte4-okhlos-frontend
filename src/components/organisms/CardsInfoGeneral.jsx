@@ -21,7 +21,7 @@ const CardsInfoGeneral = () => {
     }, [])
     return (
         <div className="font-Roboto gap-5 p-3 text-center ">
-            <h2 className="text-[1.3rem]">Informe General: Programate</h2>
+            <h2 className="text-[1.3rem] font-bold text-center sm:text-left p-3">Informe General: Programate</h2>
             <div className="
                 grid
                 grid-cols
