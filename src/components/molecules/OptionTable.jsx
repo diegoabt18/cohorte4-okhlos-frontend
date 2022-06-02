@@ -69,9 +69,6 @@ const dispacth = useDispatch()
                 items-center
                 w-full
                 sm:flex-row
-                md:justify-end
-                
-                  
             '>
                 <ButtonLoadDataBasicExcel load={load} />
                 <ButtonIconText text={"Guardar Datos"} icon={"fluent:save-16-regular"} func={insertData}  />
