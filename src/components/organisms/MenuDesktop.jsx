@@ -55,6 +55,11 @@ const MenuDesktop = () => {
             <IconMenu icon={"akar-icons:circle"} text={"Realizar Match"} />
           </div>
         </NavLink>
+        <NavLink to={"/MatchManage"}>
+          <div className="hover:text-PrimarioColor1">
+            <IconMenu icon={"akar-icons:circle"} text={"Administrar Match"} />
+          </div>
+        </NavLink>
       </ItemMenu>
 
       <ItemMenu icon={"carbon:group-presentation"} text={"Sesiones"}>

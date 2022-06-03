@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
 import { selectDataEstudentApi } from '../../redux/slices/DataApiEstudentSlice';
+import { selectMatchManage } from '../../redux/slices/DataApiMatchSlice';
 import { utils, writeFile } from 'xlsx';
 import { selectDataMentorApi } from '../../redux/slices/DataApiMentorSlice';
 import { Icon } from '@iconify/react';
@@ -12,8 +13,10 @@ const OptionTableAdmin = ({ filter, setFilter, load, text, func, setOpen }) => {
 
     if (load == "student") {
         data = useSelector(selectDataEstudentApi);
-    } else {
+    } else if (load == "mentor"){
         data = useSelector(selectDataMentorApi);
+    } else{
+        data = useSelector(selectMatchManage);
     }
 
     function openModal() {

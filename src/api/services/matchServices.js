@@ -45,4 +45,19 @@ const matchIndividual = async (id) => {
         });
 }
 
-export default { getPrograms, matchMasivo, matchIndividual }
+const getAllMatchByCohort = async () => {
+
+    return await axios
+        .get(`getAllMatch`)
+        .then((response) => {
+            console.log(response.data)
+            if (response.data.length) {
+                return response.data;
+            } else {
+                return []
+            }
+        });
+}
+
+
+export default { getPrograms, matchMasivo, matchIndividual, getAllMatchByCohort }
