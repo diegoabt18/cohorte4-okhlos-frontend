@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllMatchByCohort, selectMatchManage } from '../../redux/slices/DataApiMatchSlice';
 import {DataMentorUpdate, DataMentor, ModalUpdate, OptionTableAdmin, PageOptionsTitle} from '../molecules';
-import {BasicTable } from '../organisms';
+import {BasicTableMatch } from '../organisms';
+import matchServices from '../../api/services/matchServices';
 
 const TemplateManageMatch = () => {
     useEffect(() => {
@@ -35,12 +36,12 @@ const TemplateManageMatch = () => {
             <div className='grid'>
                 <div className='pt-6 pb-4 px-4 font-Roboto font-bold text-center'>
                     <PageOptionsTitle text={"Administrar Match"} className='text-center' />
-                    <ModalUpdate  state={openNew} setState={setOpenNew} >
+                    {/* <ModalUpdate  state={openNew} setState={setOpenNew} >
                     <DataMentor setOpen={setOpenNew}/>
-                    </ModalUpdate>
-                    {/* <ModalUpdate state={open} setState={setOpen} >
-                        <DataMentorUpdate DataForm={DataForm} setDataForm={setDataForm} setOpen={setOpen}/>
                     </ModalUpdate> */}
+                    <ModalUpdate state={open} setState={setOpen} >
+                        <DataMentorUpdate DataForm={DataForm} setDataForm={setDataForm} setOpen={setOpen}/>
+                    </ModalUpdate>
                     
                 </div>
                 <div className='px-2'>
@@ -48,7 +49,7 @@ const TemplateManageMatch = () => {
                 </div>
                 <br />
                 <div className='overflow-scroll'>
-                    <BasicTable setState={setOpen} loadDataModal={loadDataModal} datos={filter.data.length? filter:dataApi}/> 
+                    <BasicTableMatch setState={setOpen} loadDataModal={loadDataModal} datos={filter.data.length? filter:dataApi} func={matchServices.deletOneMatch}/> 
                 </div>
             </div>
         )
