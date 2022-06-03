@@ -33,8 +33,9 @@ const matchMasivo = async (data) => {
     console.log(data)
     return await axios.post("MatchMassive", data)
         .then((res) => {
+            return res.data
         });
 }
 
 
-export default { getPrograms }
+export default { getPrograms, matchMasivo }

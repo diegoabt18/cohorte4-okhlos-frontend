@@ -4,6 +4,7 @@ import loadDataEstudentSlice from './slices/loadDataEstudentSlice'
 import loadDataMentorSlice from './slices/loadDataMentorSlice'
 import DataApiEstudentSlice from './slices/DataApiEstudentSlice'
 import DataApiMentorSlice from './slices/DataApiMentorSlice'
+import loadDataMatchSlice from './slices/loadDataMatchSlice'
 
 export const store = configureStore({
   reducer: {
@@ -11,6 +12,7 @@ export const store = configureStore({
       dataEstudentExcel:loadDataEstudentSlice,
       dataMentorExcel:loadDataMentorSlice,
       dataEstudentApi:DataApiEstudentSlice,
-      dataMentorApi:DataApiMentorSlice 
+      dataMentorApi:DataApiMentorSlice, 
+      dataMatchApi:loadDataMatchSlice 
   },
 })

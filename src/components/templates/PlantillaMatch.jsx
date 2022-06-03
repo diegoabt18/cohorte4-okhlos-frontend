@@ -3,9 +3,11 @@ import {PageOptionsTitle} from "../molecules";
 import {MatchTableOptions, TableMatch, } from "../organisms";
 import { ModalUpdate } from "../molecules";
 import { InfoMatch } from "../atoms";
-import studentServices from "../../api/services/studentServices";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { matchMassive } from "../../redux/slices/loadDataMatchSlice";
 import { selectDataEstudentApi } from "../../redux/slices/DataApiEstudentSlice";
+import studentServices from "../../api/services/studentServices";
+
 
 const masivo = [{mentorId:1, mentorScore:80, idStudent:1, nameStudent:"javier", nameMentor:"tavo", porcentajeScoreLow:20, porcentajeScoreHigh:80, porcentajeScoreAge:50},
 {mentorId:2, mentorScore:80, idStudent:2, nameStudent:"javier", nameMentor:"tavo", porcentajeScoreLow:20, porcentajeScoreHigh:80, porcentajeScoreAge:50},
@@ -15,8 +17,20 @@ const masivo = [{mentorId:1, mentorScore:80, idStudent:1, nameStudent:"javier", 
 
 
 const PlantillaMatch = () => {
-  const dataapi = useSelector(selectDataEstudentApi)
-  console.log(dataapi)
+  const dispatch = useDispatch()
+  const students = useSelector(selectDataEstudentApi)
+  function domatch(){
+    var arraystudent = []
+    if (students){
+    for (let index = 0; index < students.data.length; index++) {
+      arraystudent.push(students.data[index][0]) 
+    }  
+      dispatch(matchMassive(arraystudent))  
+      console.log(arraystudent)
+      console.log(students)
+    } 
+    
+  }
   const[open, setOpen ] = useState (false)
   const[datainfo, setDatainfo ] = useState ("")
   const datos={    
@@ -40,7 +54,7 @@ console.log(data)
       </ModalUpdate>      
       <div className='pt-6 pb-4 px-4 font-Roboto font-bold'>
             <PageOptionsTitle text={"Realizar Match"} />
-            <MatchTableOptions func={studentServices.getStudentCohort}  />
+            <MatchTableOptions func={studentServices.getStudentCohort} funcMatch={domatch} />
       </div>
 
       <div>
