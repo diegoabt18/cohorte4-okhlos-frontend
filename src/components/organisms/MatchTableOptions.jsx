@@ -30,6 +30,7 @@ const MatchTableOptions = ({func, funcMatch}) => {
             </ModalUpdate>
             <div className="">
                 <BasicComboBox func={func} load={"student"} data={data} />
+                
             </div>
             <div className="
                 flex
