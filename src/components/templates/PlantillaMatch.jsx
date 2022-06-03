@@ -2,32 +2,40 @@ import React, { useState } from "react";
 import { PageOptionsTitle } from "../molecules";
 import { MatchTableOptions, TableMatch, } from "../organisms";
 import { ModalUpdate } from "../molecules";
-import { InfoMatch } from "../atoms";
+import { InfoMatch, ModalAlert } from "../atoms";
 import { useSelector, useDispatch } from "react-redux";
 import { matchMassive } from "../../redux/slices/loadDataMatchSlice";
 import { selectDataEstudentApi } from "../../redux/slices/DataApiEstudentSlice";
 import studentServices from "../../api/services/studentServices";
 
 
-const masivo = [{ mentorId: 1, mentorScore: 80, idStudent: 1, nameStudent: "javier", nameMentor: "tavo", porcentajeScoreLow: 20, porcentajeScoreHigh: 80, porcentajeScoreAge: 50 },
-{ mentorId: 2, mentorScore: 80, idStudent: 2, nameStudent: "javier", nameMentor: "tavo", porcentajeScoreLow: 20, porcentajeScoreHigh: 80, porcentajeScoreAge: 50 },
-{ mentorId: 3, mentorScore: 80, idStudent: 3, nameStudent: "javier", nameMentor: "tavo", porcentajeScoreLow: 20, porcentajeScoreHigh: 80, porcentajeScoreAge: 50 },
-{ mentorId: 4, mentorScore: 180, idStudent: 4, nameStudent: "javier", nameMentor: "tavo", porcentajeScoreLow: 20, porcentajeScoreHigh: 80, porcentajeScoreAge: 50 }]
-
-
 
 const PlantillaMatch = () => {
   const dispatch = useDispatch()
   const students = useSelector(selectDataEstudentApi)
+
   function domatch() {
     var arraystudent = []
     if (students) {
       for (let index = 0; index < students.data.length; index++) {
         arraystudent.push(students.data[index][0])
       }
-      const matchresponse= dispatch(matchMassive(arraystudent))
-      matchresponse.then(res=>{
-        console.log(res)
+      const matchresponse = dispatch(matchMassive(arraystudent))
+      matchresponse.then(res => {
+        console.log(res.payload)
+        if (res.payload) {
+          setDatos(datos=>{
+            return{
+              ...datos, 
+            data:res.payload,
+            file:true
+            }
+          })
+          ModalAlert("Match Ok", "Se realizo el match satisfactoriamente", "success")
+        }else{
+          //setDatos()
+          ModalAlert("Match Error", "No se pudo realizar el match", "error")
+        }
       })
       console.log(arraystudent)
       console.log(students)
@@ -36,12 +44,12 @@ const PlantillaMatch = () => {
   }
   const [open, setOpen] = useState(false)
   const [datainfo, setDatainfo] = useState("")
-  const datos = {
-    data: masivo,
+  const [datos, setDatos] = useState({
+    data: [],
     file: true,
     columnas: [["idEstudiante", "Estudiante", "IdMentor", "Mentor", "Puntaje"]],
     codeColumnas: ["idStudent", "nameStudent", "mentorId", "nameMentor", "mentorScore"]
-  }
+  })
 
 
   function setmodal(data) {
