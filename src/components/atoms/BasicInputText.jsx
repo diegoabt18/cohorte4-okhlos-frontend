@@ -11,15 +11,16 @@ const BasicInputText = ({ placeholder, name, func, type }) => {
                 onChange={func}
                 required
                 className="
-                    border-b-2
-                    divide-y
-                    text-sm 
-                    block 
-                    w-full 
-                    p-2.5 
-                    border-y-black
-                    dark:text-black
-                    outline-none
+                border-r-0
+                border-l-0
+                border-t-0
+                border-b-2
+                text-sm 
+                block 
+                w-full 
+                px-10 
+                py-2
+                outline-0
                 "
             />
         </div>

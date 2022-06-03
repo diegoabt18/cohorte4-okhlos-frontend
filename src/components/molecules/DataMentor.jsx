@@ -122,8 +122,15 @@ const DataMentor = ({ setOpen }) => {
     
     
     return (
-        <form onSubmit={(event)=>event.preventDefault()}>
-            <div className="grid grid-cols w-full gap-5 sm:grid-col-2">
+        <form onSubmit={(event)=>event.preventDefault()} >
+            <div className=" grid
+                grid-col
+                gap-3
+                md:grid
+                md:grid-cols-2
+                h-80rem
+
+                ">
                 <div>
                     <InputNombre
                         func={handleInputChange}

@@ -76,10 +76,11 @@ const DataStudentUpdate = ({ DataForm, setDataForm, setOpen }) => {
     return (
         <form onSubmit={(event)=>event.preventDefault()} >
             <div className="
-                flex
-                flex-col
-                h-100
-                overflow-scroll
+                grid
+                grid-col
+                gap-4
+                h-80rem
+                md:grid-cols-2
             ">
                 <div>
                     <InputNombre
