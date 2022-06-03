@@ -41,18 +41,5 @@ const isLogin = () => {
 }
 
 
-const register = (username, password, name, role, last_name, email, address, cellphone) => {
-    return axios.post("user", {
-        username,
-        password,
-        name,
-        role,
-        last_name,
-        email,
-        address,
-        cellphone
-    });
-}
 
-
-export default { login, logout, register, isLogin }
+export default { login, logout, isLogin }
