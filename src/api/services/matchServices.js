@@ -68,4 +68,38 @@ const resetMatch= async ()=>{
 }
 
 
-export default { getPrograms, matchMasivo, matchIndividual, getAllMatchByCohort, resetMatch }
+const deletOneMatch = async (id) => {
+    console.log(id)
+    return await axios.delete(`deleteMatch/${id}`)
+    
+        .then((res) => {
+            console.log(res)
+            if (res.status == 200) {
+                location.reload()
+            } else {
+                ModalAlert("Error Al borrar Match", "Favor verificar!", "error")
+            }
+        }
+
+        )
+}
+
+const UpdateMatch= async (data)=>{
+    console.log(data)
+    return await axios
+    .put(`updatedMatch/${data.idMatch}`,[data.idmentor, data.idEstudiante])
+    .then((response) => {
+        return response.data
+    });
+}
+
+const getMatchStudents= async ()=>{
+    return await axios
+    .get("students/assigned")
+    .then((response) => {
+        return response.data
+    });
+}
+
+
+export default { getPrograms, getMatchStudents, UpdateMatch, matchMasivo, matchIndividual, getAllMatchByCohort, deletOneMatch, resetMatch }

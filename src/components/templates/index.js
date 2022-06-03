@@ -8,4 +8,5 @@ export {default as Footer } from './Footer';
 export {default as PlantillaMatch} from './PlantillaMatch';
 export {default as SidebarResponsive} from './SidebarResponsive';
 export {default as NavbarMobil} from './NavbarMobil';
+export {default as TemplateManageMatch} from './TemplateManageMatch';
 

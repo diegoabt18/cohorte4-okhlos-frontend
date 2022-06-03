@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import { CardsInfo } from "../molecules";
 import studentServices from "../../api/services/studentServices";
 import mentorServices from "../../api/services/mentorServices";
+import matchServices from "../../api/services/matchServices";
 
 const CardsInfoGeneral = () => {
     const [mentores, setMentores] = useState(0)
     const [estudiantes, setEstudiantes] = useState(0)
+    const [matchInfoStudents, setMatchInfoStudents] = useState(0)
     useEffect(() => {
         const students = studentServices.getAllStudents();
         students.then(res => {
@@ -16,6 +18,10 @@ const CardsInfoGeneral = () => {
         mentors.then(res => {
             setMentores(res.length)
             console.log(res.length)
+        })
+        const matchinfo = matchServices.getMatchStudents();
+        matchinfo.then(res => {
+            setMatchInfoStudents(res)
         })
 
     }, [])
@@ -42,10 +48,10 @@ const CardsInfoGeneral = () => {
                     <CardsInfo dato={mentores} text={"Mentores"} color={"bg-PrimarioColor4"} />
                 </div>
                 <div >
-                    <CardsInfo dato={50} text={"Match Est."} color={"bg-PrimarioColor1"} />
+                    <CardsInfo dato={matchInfoStudents} text={"Match Est."} color={"bg-PrimarioColor1"} />
                 </div>
                 <div >
-                    <CardsInfo dato={300} text={"Estudiantes"} color={"bg-PrimarioColor4"} />
+                    <CardsInfo dato={estudiantes- matchInfoStudents} text={"Estudiantes"} color={"bg-PrimarioColor4"} />
                 </div>
 
             </div>

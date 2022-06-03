@@ -112,4 +112,24 @@ const registerAll = async (data) => {
         });
 }
 
-export default { getAllMentor, registerAll, getEstudies, getCargos, getBusiness, offMentor, registerMentor, updateMentor }
+const getMentorAvalible = async () => {
+    return await axios
+        .get("mentors/available")
+        .then((response) => {
+            const data = response.data
+            var datos = []
+            data.forEach(element => {
+                datos.push(
+                    {
+                        value: element.id, label: element.name
+                    }
+                )
+            });
+            console.log(data)
+            return datos
+
+        });
+}
+
+
+export default { getAllMentor, registerAll, getEstudies, getCargos, getBusiness, offMentor, registerMentor, updateMentor, getMentorAvalible }

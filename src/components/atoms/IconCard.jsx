@@ -5,7 +5,7 @@ const IconCard = () => {
     
   return (
     <div className=''>
-    <Icon icon= "ph:student-fill" style={{display:'inline',width:'80px', height:'80px' }}/> 
+    <Icon icon= "ph:student-fill" style={{display:'inline', }} className='lg:w-[100%] lg:h-full  w-[100px] h-[100px] md:w-[130px] md:h-[130px]'/> 
     </div>
   )
 }

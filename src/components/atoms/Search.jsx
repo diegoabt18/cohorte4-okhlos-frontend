@@ -72,7 +72,7 @@ const Search = ({ datos, setFilter }) => {
           onChange={handleInputChange}
           required
         />
-        {searchInput.search}
+       
         {/*
         <div className="absolute right-0 top-[50%] translate-y-[-50%]">
           <button

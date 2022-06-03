@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAllMatchByCohort, selectMatchManage } from '../../redux/slices/DataApiMatchSlice';
-import {DataMentorUpdate, DataMentor, ModalUpdate, OptionTableAdmin, PageOptionsTitle} from '../molecules';
-import {BasicTable } from '../organisms';
+import {DataMatch, ModalUpdate, OptionTableAdmin, PageOptionsTitle, OptionTableMatch} from '../molecules';
+import {BasicTableMatch } from '../organisms';
+import matchServices from '../../api/services/matchServices';
 
 const TemplateManageMatch = () => {
     useEffect(() => {
@@ -13,42 +14,41 @@ const TemplateManageMatch = () => {
     const dataApi = useSelector(selectMatchManage)
     const [filter, setFilter]=useState(dataApi);
     const [open, setOpen]=useState(false);
-    const [openNew, setOpenNew]=useState(false);
     const [DataForm, setDataForm] = useState({
-        id:null,
+        idMatch:"",
+        nameStudent:"",
+        idStudent: 0,
         nameMentor: "",
-        nameStudent: "",
-        score: null
-    }); 
-
-    function loadDataModal(data) {
+        mentorScore: 0,
+      });
+      function loadDataModal(data) {
         console.log(data)
         setDataForm({
-            ...DataForm,
-            id: data[0],
-            nameMentor: data[1],
-            nameStudent: data[2],
-            score: data[3]
-            })
-        }
+          ...DataForm,
+          idMatch: data[0],
+          nameStudent: data[1],
+          idStudent: data[2],
+          nameMentor: data[3],
+          mentorScore: data[4],
+        })
+      }
+      console.log(DataForm)
     return (
             <div className='grid'>
                 <div className='pt-6 pb-4 px-4 font-Roboto font-bold text-center'>
                     <PageOptionsTitle text={"Administrar Match"} className='text-center' />
-                    <ModalUpdate  state={openNew} setState={setOpenNew} >
-                    <DataMentor setOpen={setOpenNew}/>
+                  
+                    <ModalUpdate state={open} setState={setOpen} title={"Editar Match estudiante"} >
+                      <DataMatch datos={DataForm}/>
                     </ModalUpdate>
-                    {/* <ModalUpdate state={open} setState={setOpen} >
-                        <DataMentorUpdate DataForm={DataForm} setDataForm={setDataForm} setOpen={setOpen}/>
-                    </ModalUpdate> */}
                     
                 </div>
                 <div className='px-2'>
-                    <OptionTableAdmin setOpen={setOpenNew} func={""}  filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"match"} text={'Agregar Mentor'}/>
+                    <OptionTableMatch setOpen={setOpen}  filter={filter.data.length? filter:dataApi} setFilter={setFilter} load={"match"} />
                 </div>
                 <br />
                 <div className='overflow-scroll'>
-                    <BasicTable setState={setOpen} loadDataModal={loadDataModal} datos={filter.data.length? filter:dataApi}/> 
+                    <BasicTableMatch setState={setOpen} loadDataModal={loadDataModal} datos={filter.data.length? filter:dataApi} func={matchServices.deletOneMatch}/> 
                 </div>
             </div>
         )

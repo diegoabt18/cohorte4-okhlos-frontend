@@ -2,11 +2,11 @@ import React from 'react'
 import { Icon } from '@iconify/react'
 import { ButtonTable } from '../atoms'
 
-const TableMatch = ({ datos, setModal, setModalEdit }) => {
+const TableMatch = ({ datos, setModal }) => {
 console.log(datos)
   return (
     <div className="font-GilroyLight h-[60vh] ">
-      <table className="table-zebra table-compact w-full ">
+      <table className="table-zebra table-compact w-full text-center">
         <thead className=" font-Roboto">
           <tr className="w-full">
             {datos.file ? (
@@ -46,9 +46,6 @@ console.log(datos)
                 ))}
                 <td className="gap-2 h-full">
                   <div className='h-full'>
-                  <button onClick={()=>setModalEdit(true)} type="button" className="rounded-md inline-flex items-center hover:text-PrimarioColor1 justify-center text-gray-400 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
-                    <Icon className={"text-[1.5rem] text-PrimarioColor2 hover:text-PrimarioColor1"} style={{ display: 'inline' }} icon="eva:edit-2-outline" />
-                  </button>
                   <ButtonTable 
                     id={r}
                     func={setModal}

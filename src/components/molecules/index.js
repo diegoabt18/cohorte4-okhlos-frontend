@@ -21,5 +21,6 @@ export {default as ModalUpdate} from './ModalUpdate';
 export {default as DataStudentUpdate} from './DataStudentUpdate';
 export {default as DataMentorUpdate} from './DataMentorUpdate';
 export {default as FormMatch} from './FormMatch' 
-
+export {default as OptionTableMatch} from './OptionTableMatch' 
+export {default as DataMatch} from './DataMatch' 
 

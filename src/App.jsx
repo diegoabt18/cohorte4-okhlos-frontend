@@ -3,9 +3,8 @@ import { Route, Routes } from 'react-router-dom'
 import './App.css'
 import ContainerLogin from './components/organisms/ContainerLogin'
 import {PlantillaMatch} from './components/templates'
-import {PaginaAdmin, EstudentPageLoad, MentorPageLoad, ManageStudent, ManageMentor, Dashboard, Sesiones} from './pages'
+import {PaginaAdmin, EstudentPageLoad, MentorPageLoad, ManageStudent, ManageMentor, Dashboard, Sesiones, ManageMatch} from './pages'
 import {RequireAuth, Layout,Unauthorized} from './components/atoms'
-import TemplateManageMatch from './components/templates/TemplateManageMatch'
 
 
 function App() {
@@ -49,7 +48,7 @@ function App() {
         </Route>
         <Route element={<RequireAuth allowedRoles={"admin"} />} >
           <Route path={"/MatchManage"} element={<PaginaAdmin >
-            <TemplateManageMatch />
+            <ManageMatch />
           </PaginaAdmin>} />
         </Route>
         <Route element={<RequireAuth allowedRoles={"admin"} />} >
