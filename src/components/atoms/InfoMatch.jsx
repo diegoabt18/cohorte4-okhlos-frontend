@@ -21,13 +21,13 @@ const InfoMatch = ({ptotal, pinteresmayor, pinteresmenor, pedad}) => {
             </div>
 
             <div className='border-solid border-2 flex flex-col w-full h-[10rem] items-center justify-center gap-2'>
-                <p className='font-bold'>Porcentaje Interés Menor:</p>
+                <p className='font-bold'>Porcentaje Interés Mayor:</p>
                 <p>{pinteresmenor}%</p>
                 <progress class="progress progress-warning w-56" value={pinteresmenor} max="100">{pinteresmenor}%</progress>
             </div>
 
             <div className='border-solid border-2 flex flex-col w-full h-[10rem] items-center justify-center gap-2'>
-                <p className='font-bold'>Porcentaje Interés Menor:</p>
+                <p className='font-bold'>Porcentaje Edad:</p>
                 <p>{pedad}%</p>
                 <progress class="progress progress-warning w-56" value= {pedad} max="100">{pedad}%</progress>
             </div>
