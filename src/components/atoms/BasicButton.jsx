@@ -11,9 +11,12 @@ const BasicButton = ({text, func}) => {
             font-bold  
             py-2 
             px-4 
-            rounded"
+            rounded
+            2xl:text-2xl
+            "
             type='buttom'
             onClick={func}
+            
         >
             {text}
         </button>
