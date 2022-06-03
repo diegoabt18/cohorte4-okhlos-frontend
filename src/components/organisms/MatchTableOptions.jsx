@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import {BasicComboBox, ButtonIconText} from "../atoms";
+import {BasicComboBox, ButtonIconText, ModalAlert} from "../atoms";
 import matchServices from "../../api/services/matchServices";
 import { selectDataEstudentApi } from "../../redux/slices/DataApiEstudentSlice";
 import { ModalUpdate } from "../molecules";
@@ -12,6 +12,19 @@ const MatchTableOptions = ({func, funcMatch}) => {
     const data = useSelector(selectDataEstudentApi)
     function openmodal(){
         setopen(true) 
+    }
+
+    function reset(){
+        const response= matchServices.resetMatch()
+        response.then(res=>{
+            console.log(res)
+            if(res.message=="¡Matchs reestablecidos!"){
+                ModalAlert("Reset Ok", "Se restablecio el match satisfactoriamente", "success")
+            }else{
+                ModalAlert("Reset Error", "No se pudo restablecer el match", "Error")
+            }
+        })
+
     }
 
     return (
@@ -36,8 +49,9 @@ const MatchTableOptions = ({func, funcMatch}) => {
                 gap-3
                 md:flex-row
             ">
-                <ButtonIconText text={"Match Individual"} icon={"material-symbols:group-add-rounded"} func={openmodal}  />
                 <ButtonIconText text={"Match Masivo"} icon={"clarity:group-solid"} func={funcMatch} />
+                <ButtonIconText text={"Reset Match"} icon={"clarity:group-solid"} func={reset} />
+                <ButtonIconText text={"Match Individual"} icon={"material-symbols:group-add-rounded"} func={openmodal}  />
                 <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"}  />
                 
             </div>

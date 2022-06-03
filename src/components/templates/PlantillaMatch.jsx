@@ -57,11 +57,11 @@ const PlantillaMatch = () => {
     setDatainfo(data)
     console.log(data)
   }
-
+console.log(datainfo)
   return (
     <div className='grid' >
-      <ModalUpdate state={open} setState={setOpen}>
-        <InfoMatch ptotal={datainfo.mentorScore} pedad={datainfo.porcentajeScoreAge} pinteresmayor={datainfo.porcentajeScoreHigh} pinteresmenor={datainfo.porcentajeScoreLow} />
+      <ModalUpdate state={open} setState={setOpen} title={"Datalle del match"}>
+        <InfoMatch ptotal={datainfo.mentorScore} pedad={datainfo.porcentajeScoreAge} pinteresmayor={datainfo.porcentajeScoreIHigh} pinteresmenor={datainfo.porcentajeScoreIlow} />
       </ModalUpdate>
       <div className='pt-6 pb-4 px-4 font-Roboto font-bold'>
         <PageOptionsTitle text={"Realizar Match"} />

@@ -13,7 +13,7 @@ const customStyles = {
     },
 };
 Modal.setAppElement('#root');
-const ModalUpdate = ({ state, setState, children }) => {
+const ModalUpdate = ({ state, setState, children, title }) => {
 
 
     function openModal() {
@@ -37,7 +37,7 @@ const ModalUpdate = ({ state, setState, children }) => {
             >
                 <div className="bg-PrimarioColor2 rounded-xl p-2 flex justify-between ">
                     <div >
-                        <h3 className=" font-Roboto text-lg font-bold">Actualizar Datos</h3>
+                        <h3 className=" font-Roboto text-lg font-bold">{title}</h3>
                     </div>
                     <XCloseBtn func={closeModal}/>
                 </div>

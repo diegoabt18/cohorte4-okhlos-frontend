@@ -59,5 +59,13 @@ const getAllMatchByCohort = async () => {
         });
 }
 
+const resetMatch= async ()=>{
+    return await axios
+    .delete(`resetMatch`)
+    .then((response) => {
+        return response.data
+    });
+}
 
-export default { getPrograms, matchMasivo, matchIndividual, getAllMatchByCohort }
+
+export default { getPrograms, matchMasivo, matchIndividual, getAllMatchByCohort, resetMatch }
