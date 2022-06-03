@@ -5,6 +5,7 @@ import ContainerLogin from './components/organisms/ContainerLogin'
 import {PlantillaMatch} from './components/templates'
 import {PaginaAdmin, EstudentPageLoad, MentorPageLoad, ManageStudent, ManageMentor, Dashboard, Sesiones} from './pages'
 import {RequireAuth, Layout,Unauthorized} from './components/atoms'
+import TemplateManageMatch from './components/templates/TemplateManageMatch'
 
 
 function App() {
@@ -44,6 +45,11 @@ function App() {
         <Route element={<RequireAuth allowedRoles={"admin"} />} >
           <Route path={"/PlantillaMatch"} element={<PaginaAdmin >
             <PlantillaMatch />
+          </PaginaAdmin>} />
+        </Route>
+        <Route element={<RequireAuth allowedRoles={"admin"} />} >
+          <Route path={"/MatchManage"} element={<PaginaAdmin >
+            <TemplateManageMatch />
           </PaginaAdmin>} />
         </Route>
         <Route element={<RequireAuth allowedRoles={"admin"} />} >
