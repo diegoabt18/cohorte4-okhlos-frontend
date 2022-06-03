@@ -36,9 +36,10 @@ const MatchTableOptions = ({func, funcMatch}) => {
                 gap-3
                 md:flex-row
             ">
-                <ButtonIconText text={"Realizar Match"} icon={"clarity:group-solid"} func={funcMatch} />
-                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"}  />
                 <ButtonIconText text={"Match Individual"} icon={"material-symbols:group-add-rounded"} func={openmodal}  />
+                <ButtonIconText text={"Match Masivo"} icon={"clarity:group-solid"} func={funcMatch} />
+                <ButtonIconText text={"Descargar"} icon={"healthicons:excel-logo"}  />
+                
             </div>
         </div>
     );

@@ -1,7 +1,7 @@
 import React from 'react'
 import Select from 'react-select'
 
-const ComboStudentMatch = ({data}) => {
+const ComboStudentMatch = ({data, func}) => {
     var arraystudent =[]
     for (let i = 0; i <data.data.length; i++) {
         arraystudent.push(
@@ -16,7 +16,7 @@ const ComboStudentMatch = ({data}) => {
     }
   
     return (
-    <Select className='w-[200px]' onChange={(e) => selectCohorte(e) } options={arraystudent} placeholder={"Seleccione Estudiante"} />
+    <Select className='w-[200px]' onChange={(e) => func(e) } options={arraystudent} placeholder={"Seleccione Estudiante"} />
     
   )
 }

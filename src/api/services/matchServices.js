@@ -37,5 +37,12 @@ const matchMasivo = async (data) => {
         });
 }
 
+const matchIndividual = async (id) => {
+    console.log(id)
+    return await axios.post(`calculate/match/${id}`)
+        .then((res) => {
+            return res.data
+        });
+}
 
-export default { getPrograms, matchMasivo }
+export default { getPrograms, matchMasivo, matchIndividual }
