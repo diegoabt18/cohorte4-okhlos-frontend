@@ -9,6 +9,7 @@ import { FormMatch } from "../molecules";
 
 const MatchTableOptions = ({func, funcMatch}) => {
     const [open,setopen] = useState(false) 
+   
     const data = useSelector(selectDataEstudentApi)
     function openmodal(){
         setopen(true) 
@@ -25,7 +26,7 @@ const MatchTableOptions = ({func, funcMatch}) => {
             }
         })
 
-    }
+    } 
 
     return (
         <div className="
@@ -38,8 +39,10 @@ const MatchTableOptions = ({func, funcMatch}) => {
             md:flex-row
             md:justify-between">
             <ModalUpdate state={open} setState={setopen}>
-            <FormMatch func={func} data={data}/>
+                <FormMatch func={func} data={data}/>
             </ModalUpdate>
+            
+
             <div className="">
                 <BasicComboBox func={func} load={"student"} data={data} />
             </div>
