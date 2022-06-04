@@ -33,9 +33,9 @@ const ModalUpdate = ({ state, setState, children, title }) => {
                 onRequestClose={closeModal}
                 style={customStyles}
                 contentLabel="Example Modal"
-                className='h-[80%] overflow-scroll w-[85%] p-6 absolute bg-white rounded-lg lg:overflow-hidden'
+                className='h-[80%] overflow-scroll w-[85%] p-6 absolute bg-white rounded-lg lg:overflow-auto'
             >
-                <div className="bg-PrimarioColor2 rounded-xl p-2 flex justify-between ">
+                <div className="bg-PrimarioColor2 rounded-xl p-2 flex justify-between  ">
                     <div >
                         <h3 className=" font-Roboto text-lg font-bold">{title}</h3>
                     </div>

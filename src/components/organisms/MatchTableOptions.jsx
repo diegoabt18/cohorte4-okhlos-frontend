@@ -39,7 +39,7 @@ const MatchTableOptions = ({func, funcMatch}) => {
             md:flex-row
             md:justify-between
             ">
-            <ModalUpdate state={open} setState={setopen}>
+            <ModalUpdate state={open} setState={setopen} title={''}>
                 <FormMatch func={func} data={data}/>
             </ModalUpdate>
             

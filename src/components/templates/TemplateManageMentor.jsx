@@ -53,10 +53,10 @@ const TemplateManageMentor = () => {
             <div className='grid'>
                 <div className='pt-6 pb-4 px-4 font-Roboto font-bold text-center'>
                     <PageOptionsTitle text={"Administrar Mentores"} className='text-center' />
-                    <ModalUpdate  state={openNew} setState={setOpenNew} >
+                    <ModalUpdate  state={openNew} setState={setOpenNew} title={'Nuevo Mentor'} >
                     <DataMentor setOpen={setOpenNew}/>
                     </ModalUpdate>
-                    <ModalUpdate state={open} setState={setOpen} >
+                    <ModalUpdate state={open} setState={setOpen} title={'Actualizar Mentor'} >
                         <DataMentorUpdate DataForm={DataForm} setDataForm={setDataForm} setOpen={setOpen}/>
                     </ModalUpdate>
                     

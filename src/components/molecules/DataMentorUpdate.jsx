@@ -109,7 +109,10 @@ const DataMentorUpdate = ({ DataForm, setDataForm, setOpen }) => {
     
     return (
         <form onSubmit={(event)=>event.preventDefault()}>
-            <div className="grid grid-cols-2 w-full gap-5 sm:grid-cols">
+            <div className=" grid
+                grid-col
+                gap-4
+                md:grid-cols-2">
                 <div>
                     <InputNombre
                         func={handleInputChange}

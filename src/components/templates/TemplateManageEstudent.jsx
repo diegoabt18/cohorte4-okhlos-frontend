@@ -51,10 +51,10 @@ const templateManageEstudent = () => {
         <div className='grid'>
             <div className='pt-6 pb-4 px-4 font-Roboto font-bold text-center'>
                 <PageOptionsTitle text={"Administrar Estudiantes"} className='text-center' />
-                <ModalUpdate state={openNew} setState={setOpenNew} >
-                <DataStudent setOpen={setOpenNew} />
+                <ModalUpdate state={openNew} setState={setOpenNew} title={'Nuevo Estudiante'}>
+                    <DataStudent setOpen={setOpenNew} />
                 </ModalUpdate>
-                <ModalUpdate state={open} setState={setOpen} >
+                <ModalUpdate state={open} setState={setOpen} title={'Actualizar Estudiante'}>
                     <DataStudentUpdate DataForm={DataForm} setDataForm={setDataForm} setOpen={setOpen}/>
                 </ModalUpdate>
             </div>

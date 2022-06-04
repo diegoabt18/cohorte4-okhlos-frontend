@@ -18,7 +18,7 @@ const NewStudent = ({ text }) => {
                         <div className="bg-PrimarioColor2 rounded-xl p-2" >
                             <h3 className="text-lg font-bold">Agregar nuevo estudiante</h3>
                         </div>
-                        <div className="py-7">
+                        <div className="py-7 ">
                         <DataStudent />
                         </div>
                     </div>
