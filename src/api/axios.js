@@ -1,5 +1,5 @@
 import axios from 'axios'
 
 export default axios.create({
-    baseURL: 'https://okhlosbackend.herokuapp.com/',
+    baseURL: 'http://165.227.103.3/',
 })
