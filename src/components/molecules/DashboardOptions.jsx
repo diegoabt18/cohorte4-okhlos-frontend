@@ -16,10 +16,10 @@ const DashboardOptions = () => {
                 <TextInfoDashBoard />
 
             </div>
-            <div className='flex gap-x-4 justify-end items-start pr-4 pt-4'  >
+           {/* <div className='flex gap-x-4 justify-end items-start pr-4 pt-4'  >
                 <BasicButton text={"Programate"} />
                 <BasicButton text={"Proyectate"} />
-            </div>
+            </div>*/}
         </div>
     )
 }

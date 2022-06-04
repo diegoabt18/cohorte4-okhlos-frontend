@@ -42,16 +42,16 @@ const CardsInfoGeneral = () => {
 
             ">
                 <div >
-                    <CardsInfo dato={estudiantes} text={"Estudiantes"} color={"bg-PrimarioColor1"} />
+                    <CardsInfo dato={estudiantes} text={"Estudiantes"} color={"bg-PrimarioColor1"} link={"/EstudentManage"}/>
                 </div>
                 <div >
-                    <CardsInfo dato={mentores} text={"Mentores"} color={"bg-PrimarioColor4"} />
+                    <CardsInfo dato={mentores} text={"Mentores"} color={"bg-PrimarioColor4"} link={"/MentorManage"}/>
                 </div>
                 <div >
-                    <CardsInfo dato={matchInfoStudents} text={"Match Est."} color={"bg-PrimarioColor1"} />
+                    <CardsInfo dato={matchInfoStudents} text={"Match Est."} color={"bg-PrimarioColor1"} link={"/MatchManage"}/>
                 </div>
                 <div >
-                    <CardsInfo dato={estudiantes- matchInfoStudents} text={"Estudiantes"} color={"bg-PrimarioColor4"} />
+                    <CardsInfo dato={estudiantes- matchInfoStudents} text={"Estudiantes"} color={"bg-PrimarioColor4"} link={"/MatchManage"}/>
                 </div>
 
             </div>

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import {BasicButtonIcon, IconMenu} from "../atoms";
-import {IconMenuResponsive} from "../molecules";
+import { BasicButtonIcon, IconMenu } from "../atoms";
+import { IconMenuResponsive } from "../molecules";
 
 const MenuResponsive = () => {
   return (
@@ -53,6 +53,11 @@ const MenuResponsive = () => {
           <NavLink to={"/PlantillaMatch"}>
             <div className="hover:text-PrimarioColor1">
               <IconMenu icon={"akar-icons:circle"} text={"Realizar Match"} />
+            </div>
+          </NavLink>
+          <NavLink to={"/MatchManage"}>
+            <div className="hover:text-PrimarioColor1">
+              <IconMenu icon={"akar-icons:circle"} text={"Administrar Match"} />
             </div>
           </NavLink>
         </IconMenuResponsive>
