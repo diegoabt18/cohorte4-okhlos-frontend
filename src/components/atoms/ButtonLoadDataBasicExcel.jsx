@@ -4,8 +4,9 @@ import { useDispatch } from 'react-redux';
 import { setDataEstudent } from '../../redux/slices/loadDataEstudentSlice'
 import { Icon } from '@iconify/react';
 import { setDataMentor } from '../../redux/slices/loadDataMentorSlice'
+import ModalAlert from './ModalAlert';
 
-const ButtonLoadDataExcel = ( {load} ) => {
+const ButtonLoadDataExcel = ({ load }) => {
 
     const dispatch = useDispatch();
     const payload = {
@@ -36,7 +37,7 @@ const ButtonLoadDataExcel = ( {load} ) => {
                 const columnas = allData.slice(0, 1)
                 const data = allData.slice(1)
                 const codeColumnas = make_cols(ws["!ref"])
-               
+
 
                 //Configuracion del payload para en enviar al redux
                 payload.data = data;
@@ -44,12 +45,15 @@ const ButtonLoadDataExcel = ( {load} ) => {
                 payload.columnas = columnas;
                 payload.file = true;
                 payload.name = name
-                if (load == "student"){
+
+                if (load == "student") {
                     dispatch(setDataEstudent(payload))
-                } 
-                else(
+                }
+                else {
+
                     dispatch(setDataMentor(payload))
-                )
+                }
+
 
             }
         }
@@ -64,16 +68,16 @@ const ButtonLoadDataExcel = ( {load} ) => {
 
     return (
 
-            <label htmlFor="dropzone-file" className="text-black font-Roboto bg-PrimarioColor2 hover:bg-PrimarioColor1 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 gap-2  ">
-                <Icon className='text-[1.2rem]' icon="akar-icons:cloud-upload" style={{ display: 'inline' }} />
-                <p className='text-[1.1rem]'>Cargar Datos</p>
-                <input id="dropzone-file" className="hidden"
-                    required
-                    type="file"
-                    name="file"
-                    onChange={handleFile}
-                />
-            </label>
+        <label htmlFor="dropzone-file" className="text-black font-Roboto bg-PrimarioColor2 hover:bg-PrimarioColor1 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-2 gap-2  ">
+            <Icon className='text-[1.2rem]' icon="akar-icons:cloud-upload" style={{ display: 'inline' }} />
+            <p className='text-[1.1rem]'>Cargar Datos</p>
+            <input id="dropzone-file" className="hidden"
+                required
+                type="file"
+                name="file"
+                onChange={handleFile}
+            />
+        </label>
 
     )
 }
